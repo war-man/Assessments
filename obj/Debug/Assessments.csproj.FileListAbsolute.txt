@@ -1,0 +1,9 @@
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\bin\Debug\Assessments.exe.config
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\bin\Debug\Assessments.exe
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\bin\Debug\Assessments.pdb
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.LearningTrackerWindow.resources
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.Properties.Resources.resources
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.csproj.GenerateResource.Cache
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.exe
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.pdb
+W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.csprojResolveAssemblyReference.cache
