@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearningTrackerWindow));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("2");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("3");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("4");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("5");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("6");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("7");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("8");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("9");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("10");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -50,6 +59,7 @@
             this.lblSortGroupList = new System.Windows.Forms.Label();
             this.lblGenerateGrpDesc = new System.Windows.Forms.Label();
             this.pnlGroups = new System.Windows.Forms.Panel();
+            this.btnCopyAll = new System.Windows.Forms.Button();
             this.lvNot = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -83,6 +93,11 @@
             this.btnStuAchieve = new System.Windows.Forms.Button();
             this.btnUnselectStudents = new System.Windows.Forms.Button();
             this.btnSelectAllStudents = new System.Windows.Forms.Button();
+            this.lvChapters = new System.Windows.Forms.ListView();
+            this.btnShowChaptObj = new System.Windows.Forms.Button();
+            this.cb4 = new System.Windows.Forms.CheckBox();
+            this.cb3 = new System.Windows.Forms.CheckBox();
+            this.cb2 = new System.Windows.Forms.CheckBox();
             this.grpSelectClass = new System.Windows.Forms.GroupBox();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiClass = new System.Windows.Forms.ToolStripMenuItem();
@@ -333,6 +348,7 @@
             // 
             // pnlGroups
             // 
+            this.pnlGroups.Controls.Add(this.btnCopyAll);
             this.pnlGroups.Controls.Add(this.lvNot);
             this.pnlGroups.Controls.Add(this.label2);
             this.pnlGroups.Controls.Add(this.label6);
@@ -343,10 +359,26 @@
             this.pnlGroups.ForeColor = System.Drawing.Color.Teal;
             this.pnlGroups.Location = new System.Drawing.Point(613, 479);
             this.pnlGroups.Name = "pnlGroups";
-            this.pnlGroups.Size = new System.Drawing.Size(507, 199);
+            this.pnlGroups.Size = new System.Drawing.Size(507, 223);
             this.pnlGroups.TabIndex = 16;
             this.pnlGroups.Visible = false;
             this.pnlGroups.MouseEnter += new System.EventHandler(this.pnlGroups_MouseEnter);
+            // 
+            // btnCopyAll
+            // 
+            this.btnCopyAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCopyAll.FlatAppearance.BorderSize = 2;
+            this.btnCopyAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnCopyAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCopyAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopyAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopyAll.Location = new System.Drawing.Point(123, 186);
+            this.btnCopyAll.Name = "btnCopyAll";
+            this.btnCopyAll.Size = new System.Drawing.Size(259, 29);
+            this.btnCopyAll.TabIndex = 20;
+            this.btnCopyAll.Text = "Copy Groups to Clipboard";
+            this.btnCopyAll.UseVisualStyleBackColor = true;
+            this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
             // 
             // lvNot
             // 
@@ -449,9 +481,9 @@
             this.lvObjectives.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvObjectives.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvObjectives.LabelWrap = false;
-            this.lvObjectives.Location = new System.Drawing.Point(3, 29);
+            this.lvObjectives.Location = new System.Drawing.Point(3, 70);
             this.lvObjectives.Name = "lvObjectives";
-            this.lvObjectives.Size = new System.Drawing.Size(301, 386);
+            this.lvObjectives.Size = new System.Drawing.Size(301, 345);
             this.lvObjectives.TabIndex = 7;
             this.lvObjectives.UseCompatibleStateImageBehavior = false;
             this.lvObjectives.View = System.Windows.Forms.View.SmallIcon;
@@ -510,7 +542,7 @@
             // 
             this.lblObjectiveList.AutoSize = true;
             this.lblObjectiveList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjectiveList.Location = new System.Drawing.Point(3, 8);
+            this.lblObjectiveList.Location = new System.Drawing.Point(89, 7);
             this.lblObjectiveList.Name = "lblObjectiveList";
             this.lblObjectiveList.Size = new System.Drawing.Size(137, 18);
             this.lblObjectiveList.TabIndex = 3;
@@ -541,7 +573,7 @@
             this.panel1.Controls.Add(this.msMainMenu);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1173, 694);
+            this.panel1.Size = new System.Drawing.Size(1173, 716);
             this.panel1.TabIndex = 16;
             // 
             // pbLogo
@@ -573,6 +605,7 @@
             // lbStuProgPart
             // 
             this.lbStuProgPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStuProgPart.ForeColor = System.Drawing.Color.Black;
             this.lbStuProgPart.FormattingEnabled = true;
             this.lbStuProgPart.HorizontalScrollbar = true;
             this.lbStuProgPart.ItemHeight = 15;
@@ -585,6 +618,7 @@
             // lbStuProgCom
             // 
             this.lbStuProgCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStuProgCom.ForeColor = System.Drawing.Color.Black;
             this.lbStuProgCom.FormattingEnabled = true;
             this.lbStuProgCom.HorizontalScrollbar = true;
             this.lbStuProgCom.ItemHeight = 15;
@@ -616,15 +650,19 @@
             // 
             // lblFeedbackMessage
             // 
+            this.lblFeedbackMessage.AutoEllipsis = true;
             this.lblFeedbackMessage.AutoSize = true;
             this.lblFeedbackMessage.BackColor = System.Drawing.Color.White;
+            this.lblFeedbackMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFeedbackMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedbackMessage.Location = new System.Drawing.Point(313, 0);
+            this.lblFeedbackMessage.Location = new System.Drawing.Point(391, 7);
+            this.lblFeedbackMessage.Margin = new System.Windows.Forms.Padding(0);
             this.lblFeedbackMessage.Name = "lblFeedbackMessage";
-            this.lblFeedbackMessage.Size = new System.Drawing.Size(175, 20);
+            this.lblFeedbackMessage.Size = new System.Drawing.Size(164, 24);
             this.lblFeedbackMessage.TabIndex = 33;
             this.lblFeedbackMessage.Text = "Error Message Label";
+            this.lblFeedbackMessage.UseCompatibleTextRendering = true;
             this.lblFeedbackMessage.Visible = false;
             // 
             // pnlGenerateGroups
@@ -710,6 +748,11 @@
             // 
             // scRosterDisplay.Panel2
             // 
+            this.scRosterDisplay.Panel2.Controls.Add(this.lvChapters);
+            this.scRosterDisplay.Panel2.Controls.Add(this.btnShowChaptObj);
+            this.scRosterDisplay.Panel2.Controls.Add(this.cb4);
+            this.scRosterDisplay.Panel2.Controls.Add(this.cb3);
+            this.scRosterDisplay.Panel2.Controls.Add(this.cb2);
             this.scRosterDisplay.Panel2.Controls.Add(this.lvObjectives);
             this.scRosterDisplay.Panel2.Controls.Add(this.lblObjectiveList);
             this.scRosterDisplay.Panel2.Controls.Add(this.btnCompleted);
@@ -761,6 +804,82 @@
             this.btnSelectAllStudents.UseVisualStyleBackColor = true;
             this.btnSelectAllStudents.Click += new System.EventHandler(this.btnSelectAllStudents_Click);
             // 
+            // lvChapters
+            // 
+            this.lvChapters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lvChapters.CheckBoxes = true;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
+            this.lvChapters.Location = new System.Drawing.Point(6, 28);
+            this.lvChapters.Name = "lvChapters";
+            this.lvChapters.Size = new System.Drawing.Size(220, 41);
+            this.lvChapters.TabIndex = 15;
+            this.lvChapters.UseCompatibleStateImageBehavior = false;
+            this.lvChapters.View = System.Windows.Forms.View.List;
+            // 
+            // btnShowChaptObj
+            // 
+            this.btnShowChaptObj.Location = new System.Drawing.Point(229, 33);
+            this.btnShowChaptObj.Name = "btnShowChaptObj";
+            this.btnShowChaptObj.Size = new System.Drawing.Size(75, 23);
+            this.btnShowChaptObj.TabIndex = 14;
+            this.btnShowChaptObj.Text = "Show Only";
+            this.btnShowChaptObj.UseVisualStyleBackColor = true;
+            this.btnShowChaptObj.Click += new System.EventHandler(this.btnShowChaptObj_Click);
+            // 
+            // cb4
+            // 
+            this.cb4.AutoSize = true;
+            this.cb4.Location = new System.Drawing.Point(324, 11);
+            this.cb4.Margin = new System.Windows.Forms.Padding(2);
+            this.cb4.Name = "cb4";
+            this.cb4.Size = new System.Drawing.Size(32, 17);
+            this.cb4.TabIndex = 13;
+            this.cb4.Tag = "4";
+            this.cb4.Text = "4";
+            this.cb4.UseVisualStyleBackColor = true;
+            // 
+            // cb3
+            // 
+            this.cb3.AutoSize = true;
+            this.cb3.Location = new System.Drawing.Point(288, 11);
+            this.cb3.Margin = new System.Windows.Forms.Padding(2);
+            this.cb3.Name = "cb3";
+            this.cb3.Size = new System.Drawing.Size(32, 17);
+            this.cb3.TabIndex = 12;
+            this.cb3.Tag = "3";
+            this.cb3.Text = "3";
+            this.cb3.UseVisualStyleBackColor = true;
+            // 
+            // cb2
+            // 
+            this.cb2.AutoSize = true;
+            this.cb2.Location = new System.Drawing.Point(252, 11);
+            this.cb2.Margin = new System.Windows.Forms.Padding(2);
+            this.cb2.Name = "cb2";
+            this.cb2.Size = new System.Drawing.Size(32, 17);
+            this.cb2.TabIndex = 10;
+            this.cb2.Tag = "2";
+            this.cb2.Text = "2";
+            this.cb2.UseVisualStyleBackColor = true;
+            // 
             // grpSelectClass
             // 
             this.grpSelectClass.BackColor = System.Drawing.SystemColors.Control;
@@ -793,6 +912,7 @@
             this.msMainMenu.Stretch = false;
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.MouseLeave += new System.EventHandler(this.msMainMenu_MouseLeave);
             // 
             // tsmiClass
             // 
@@ -862,7 +982,9 @@
             this.tsmiLearningObjectives.Name = "tsmiLearningObjectives";
             this.tsmiLearningObjectives.Size = new System.Drawing.Size(145, 24);
             this.tsmiLearningObjectives.Text = "Learning Objective";
+            this.tsmiLearningObjectives.DropDownOpening += new System.EventHandler(this.tsmiLearningObjectives_DropDownOpening);
             this.tsmiLearningObjectives.MouseEnter += new System.EventHandler(this.tsmiLearningObjectives_MouseEnter);
+            this.tsmiLearningObjectives.MouseLeave += new System.EventHandler(this.tsmiLearningObjectives_MouseLeave);
             // 
             // tsmiAddObjective
             // 
@@ -870,6 +992,8 @@
             this.tsmiAddObjective.Size = new System.Drawing.Size(200, 24);
             this.tsmiAddObjective.Text = "Create New";
             this.tsmiAddObjective.Click += new System.EventHandler(this.tsmiAddObjective_Click);
+            this.tsmiAddObjective.MouseEnter += new System.EventHandler(this.tsmiAddObjective_MouseEnter);
+            this.tsmiAddObjective.MouseLeave += new System.EventHandler(this.tsmiAddObjective_MouseLeave);
             // 
             // tsmiGroups
             // 
@@ -878,7 +1002,9 @@
             this.tsmiGroups.Name = "tsmiGroups";
             this.tsmiGroups.Size = new System.Drawing.Size(200, 24);
             this.tsmiGroups.Text = "Group Students By";
+            this.tsmiGroups.DropDownOpening += new System.EventHandler(this.tsmiGroups_DropDownOpening);
             this.tsmiGroups.MouseEnter += new System.EventHandler(this.tsmiGroups_MouseEnter);
+            this.tsmiGroups.MouseLeave += new System.EventHandler(this.tsmiGroups_MouseLeave);
             // 
             // tsmiGroupByObj
             // 
@@ -887,6 +1013,7 @@
             this.tsmiGroupByObj.Size = new System.Drawing.Size(287, 22);
             this.tsmiGroupByObj.Text = "Currently Selected Learning Objective(s)";
             this.tsmiGroupByObj.Click += new System.EventHandler(this.tsmiGroupByObj_Click);
+            this.tsmiGroupByObj.MouseLeave += new System.EventHandler(this.tsmiGroupByObj_MouseLeave);
             // 
             // LearningTrackerWindow
             // 
@@ -896,9 +1023,10 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1175, 708);
+            this.ClientSize = new System.Drawing.Size(1175, 730);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msMainMenu;
             this.Name = "LearningTrackerWindow";
             this.Text = "First Grade";
             this.pnlGroups.ResumeLayout(false);
@@ -997,6 +1125,12 @@
         private System.Windows.Forms.ListBox lbStuProgPart;
         private System.Windows.Forms.ListBox lbStuProgCom;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnCopyAll;
+        private System.Windows.Forms.Button btnShowChaptObj;
+        private System.Windows.Forms.CheckBox cb4;
+        private System.Windows.Forms.CheckBox cb3;
+        private System.Windows.Forms.CheckBox cb2;
+        private System.Windows.Forms.ListView lvChapters;
     }
 }
 

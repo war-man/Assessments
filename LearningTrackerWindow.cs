@@ -91,6 +91,7 @@ namespace Assessments
         /// <param name="e"></param>
         private void btnSelectClass_Click(object sender, EventArgs e)
         {
+            lblFeedbackMessage.Visible = false;
             if (lbClasses.SelectedIndex != -1) //if it is == -1 that means nothing in the box is selected and it won't do anything!
             {
                 ClearAllGroupBoxes();
@@ -106,6 +107,7 @@ namespace Assessments
             else
             {
                 lblFeedbackMessage.Text = "Please select an existing class to display.\nIf you would like to create a new class, please select the \"Create New\" option in the Class menu item.";
+                lblFeedbackMessage.Visible = true;
             }
         }
 
@@ -116,11 +118,18 @@ namespace Assessments
         private void DisplayLearningObjectivesPanel()
         {
             lvObjectives.Clear();
+            lblFeedbackMessage.Visible = false;
             foreach (string o in sto.TempObjAndDescList)
             {
                 lvObjectives.Items.Add(o);
             }
             //lvObjectives.Visible = true;
+        }
+
+        private void btnShowChaptObj_Click(object sender, EventArgs e)
+        {
+            int count = lvChapters.SelectedItems.Count;
+
         }
 
         /// <summary>
@@ -130,6 +139,7 @@ namespace Assessments
         /// </summary>
         private void DisplayClassRosterPanel()
         {
+            lblFeedbackMessage.Visible = false;
             RePopulateActiveRoster();
             lvRoster.Clear();
             foreach (int index in sto.ActiveStudentObjectIndicies)
@@ -156,6 +166,7 @@ namespace Assessments
         /// <param name="e"></param>
         private void btnSelectAllStudents_Click(object sender, EventArgs e)
         {
+            lblFeedbackMessage.Visible = false;
             if (scRosterDisplay.Visible == true)
             {
                 int count = lvRoster.Items.Count;
@@ -174,6 +185,7 @@ namespace Assessments
         /// <param name="e"></param>
         private void btnUnselectStudents_Click(object sender, EventArgs e)
         {
+            lblFeedbackMessage.Visible = false;
             if (scRosterDisplay.Visible == true)
             {
                 int count = lvRoster.Items.Count;
@@ -200,7 +212,8 @@ namespace Assessments
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tsmiNewClass_Click(object sender, EventArgs e)
-        { 
+        {
+            lblFeedbackMessage.Visible = false;
             grpAddClass.Visible = true;
             txtAddClass.Focus();
         }
@@ -310,16 +323,16 @@ namespace Assessments
                 lblUpdateComplete.Text = "The following students\nhave been updated\nto reflect objective(s)\ncompletion:\n";
 
                 int updatedCount = updatedNames.Count();
-                if (updatedCount > 4)//display up to four names plus however many more there were.
+                if (updatedCount > 3)//display up to three names plus however many more there were.
                 {
-                    for (int i = 0; i < 4; ++i)
+                    for (int i = 0; i < 3; ++i)
                     {
                         lblUpdateComplete.Text += updatedNames[i] + "\n";
                     }
-                    int diff = updatedCount - 4;
+                    int diff = updatedCount - 3;
                     lblUpdateComplete.Text += "And " + diff + " others";
                 }
-                else//less than five students were updated so we'll display all names.
+                else//less than four students were updated so we'll display all names.
                 {
                     foreach (string s in updatedNames)
                     {
@@ -420,16 +433,16 @@ namespace Assessments
                 lblPartialUpdate.Text = "The following students\nhave been updated\nto reflect objective(s)\ncompletion:\n";
 
                 int updatedCount = updatedNames.Count();
-                if (updatedCount > 4)//display up to five names plus however many more there were.
+                if (updatedCount > 3)//display up to three names plus however many more there were.
                 {
-                    for (int i = 0; i < 4; ++i)
+                    for (int i = 0; i < 3; ++i)
                     {
                         lblPartialUpdate.Text += updatedNames[i] + "\n";
                     }
-                    int diff = updatedCount - 4;
+                    int diff = updatedCount - 3;
                     lblPartialUpdate.Text += "And " + diff + " others";
                 }
-                else//less than five students were updated so we'll display all names.
+                else//less than four students were updated so we'll display all names.
                 {
                     foreach (string s in updatedNames)
                     {
@@ -631,7 +644,8 @@ namespace Assessments
                                 }
                                 //the sequence below should happen once for each objective selected to generate groups from.
                                 if ( (part == true && partAll == true) /* student has partial pass of current objective AND partial pass of all the previous ones compared to (if any)*/ 
-                                    || (part == true && passAll == true) /*student has partial pass of current objective AND complete pass of all previous ones*/ )
+                                    || (part == true && passAll == true) /*student has partial pass of current objective AND complete pass of all previous ones*/ 
+                                    || (pass == true && partAll == true) ) /*student has partial pass of previous objective(s)  and complete pass of current objective*/
                                 {
                                     partAll = true; //set Partial pass of all to true (Student has at LEAST PARTIALLY passed all objectives (even if some of those include complete passes)
                                 }
@@ -675,13 +689,13 @@ namespace Assessments
                     }
                     lblSortGroupList.Text = "The objectives used\nas criteria for this\nsort were:\n";
                     int objCount = currentSelectedObjectives.Count();
-                    if (objCount > 4)//just display five objectives and tell how many more there were (instead of having a huge list).
+                    if (objCount > 3)//just display three objectives and tell how many more there were (instead of having a huge list).
                     {
-                        for (int i = 0; i < 4; ++i)
+                        for (int i = 0; i < 3; ++i)
                         {
                             lblSortGroupList.Text += currentSelectedObjectives[i] + "\n";
                         }
-                        int diff = objCount - 4;
+                        int diff = objCount - 3;
                         lblSortGroupList.Text += "And " + diff + " others.";
                     }
                     else
@@ -707,6 +721,90 @@ namespace Assessments
                 tsmiLoadClass_Click(sender, e);
             }
         }
+
+        private void btnCopyAll_Click(object sender, EventArgs e)
+        {
+            lblFeedbackMessage.Visible = false;
+            StringBuilder fullSb = new StringBuilder();
+            string temp;
+
+            CopyListViewToClipboard(lvCompleted, out temp);
+            fullSb.AppendLine("**COMPLETE**");
+            if (temp == null)
+            {
+                fullSb.AppendLine("//NONE//");
+                fullSb.AppendLine();
+            }
+            else
+            {
+                fullSb.AppendLine(temp);
+            }
+
+            CopyListViewToClipboard(lvPartial, out temp);
+            fullSb.AppendLine("**PARTIALLY**");
+            if (temp == null)
+            {
+                fullSb.AppendLine("//NONE//");
+                fullSb.AppendLine();
+            }
+            else
+            {
+                fullSb.AppendLine(temp);
+            }
+
+            CopyListViewToClipboard(lvNot, out temp);
+            fullSb.AppendLine("**INCOMPLETE**");
+            if (temp == null)
+            {
+                fullSb.AppendLine("//NONE//");
+                //fullSb.AppendLine();
+            }
+            else
+            {
+                fullSb.AppendLine(temp);
+            }
+
+            Clipboard.SetData(System.Windows.Forms.DataFormats.Text, fullSb);
+
+            lblFeedbackMessage.Text = "Group data has been copied to the clipboard.\nYou should be able to paste into a document.";
+            lblFeedbackMessage.Visible = true;
+        }
+
+        /// <summary>
+        /// Copies all existing items in ListViewBox to clipboard.  Over-writes any existing clipboard data.  During paste,
+        /// each separate item is displayed on a separate line (row).
+        /// </summary>
+        /// <param name="listViewBox">ListView display box to copy existing items from</param>
+        private void CopyListViewToClipboard(ListView listViewBox, out string sbString)
+        {
+            int count = listViewBox.Items.Count;
+            if (count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < count; ++j)
+                {
+                    string temp = listViewBox.Items[j].Text;
+                    //sb.Append(lvCompleted.Items[j].Text);
+                    if (temp != null && temp != " " && temp != "")
+                    {
+                        sb.AppendLine(temp);
+                    }
+
+                }
+                sbString = sb.ToString();
+                Clipboard.SetData(System.Windows.Forms.DataFormats.Text, sbString);
+            }
+            else
+            {
+                sbString = null;
+            }
+            //else
+            //{
+            //    lblFeedbackMessage.Text = "There must be students contained in the group box\nin order to copy the items to clipboard.";
+            //    lblFeedbackMessage.Visible = true;
+            //}
+        }
+
         #endregion
 
         #region Add New Objective
@@ -831,18 +929,100 @@ namespace Assessments
 
         #region Menu Item Hover Display Controls
 
+        bool obj1Drop = false, obj2Drop = false, obj3Drop = false, obj4Drop = false;
+        
+        private bool NO_CURSOR_IN_MENU()
+        {
+            bool returnVal;
+            if (obj1Drop == false && obj2Drop == false && obj3Drop == false && obj4Drop == false)
+            {
+                returnVal = true;
+            }
+            else
+            {
+                returnVal = false;
+            }
+            return returnVal;
+        }
+
         private void tsmiLearningObjectives_MouseEnter(object sender, EventArgs e)
         {
             lblFeedbackMessage.Visible = false;
             tsmiClass.HideDropDown();
             tsmiStudents.HideDropDown();
             tsmiLearningObjectives.ShowDropDown();
+
         }
-        
+
+        private void msMainMenu_MouseLeave(object sender, EventArgs e)
+        {
+            //tsmiLearningObjectives.HideDropDown();
+        }
+
+        private void tsmiLearningObjectives_DropDownOpening(object sender, EventArgs e)
+        {
+            //obj1Drop = true;
+        }
+
+        private void tsmiLearningObjectives_MouseLeave(object sender, EventArgs e)
+        {
+                //if (obj1Drop == true && obj2Drop == false)
+                //{
+                //    tsmiLearningObjectives.HideDropDown();
+                //}
+        }
+
+        private void tsmiAddObjective_MouseEnter(object sender, EventArgs e)
+        {
+            //obj2Drop = true;
+            //if (NO_CURSOR_IN_MENU())
+            //{
+            //    tsmiLearningObjectives.HideDropDown();
+            //}
+        }
+
+        private void tsmiAddObjective_MouseLeave(object sender, EventArgs e)
+        {
+            //if (NO_CURSOR_IN_MENU())
+            //{
+            //    tsmiLearningObjectives.HideDropDown();
+            //}
+            //obj2Drop = false;
+        }
+
+        private void tsmiGroups_MouseLeave(object sender, EventArgs e)
+        {
+            //if (NO_CURSOR_IN_MENU())
+            //{
+            //    tsmiLearningObjectives.HideDropDown();
+            //}
+            //obj3Drop = false;
+        }
+
+
+        private void tsmiGroups_DropDownOpening(object sender, EventArgs e)
+        {
+            //obj4Drop = true;
+            //if (NO_CURSOR_IN_MENU())
+            //{
+            //    tsmiLearningObjectives.HideDropDown();
+            //}
+        }
+
+        private void tsmiGroupByObj_MouseLeave(object sender, EventArgs e)
+        {
+            //if (NO_CURSOR_IN_MENU())
+            //{
+            //    tsmiLearningObjectives.HideDropDown();
+            //}
+            //obj4Drop = false;
+        }
+
         private void tsmiGroups_MouseEnter(object sender, EventArgs e)
         {
             grpLearnObj.Visible = false; //Hides add learning objective panel group so the rest of the menu item can display cleanly.
             tsmiGroups.ShowDropDown();
+            //obj3Drop = true;
         }
 
         private void tsmiGroupByObj_Click(object sender, EventArgs e)
@@ -1000,6 +1180,7 @@ namespace Assessments
             }
         }
 
+
         private void btnSelectClass_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WAS_ENTER_PRESSED(e.KeyChar))
@@ -1007,6 +1188,9 @@ namespace Assessments
                 btnSelectClass_Click(sender, e);
             }
         }
+
+
+
 
 
 

@@ -16,6 +16,8 @@ namespace Assessments
         private List<string> tempObjectiveWDescList = new List<string>();
         private List<Student> tempStudentObjectList = new List<Student>();
         private List<int> activeStudentObjectIndicies = new List<int>();
+        private List<int> activeObjectiveIndicies = new List<int>();
+        //private int activeObjectIndiciesLenth;
         private int activeRosterLength;
 
         public string CurrentClassID
@@ -23,12 +25,6 @@ namespace Assessments
             get { return currentClassId; }
             set { currentClassId = value; }
         }
-
-        //public List<string> TempRosterList
-        //{
-        //    get { return tempRosterList; }
-        //    set { tempRosterList = value; }
-        //}
 
         public List<string> TempClassIDList
         {
@@ -58,6 +54,12 @@ namespace Assessments
         {
             get { return activeStudentObjectIndicies; }
             set { activeStudentObjectIndicies = value; }
+        }
+
+        public List<int> ActiveObjectiveIndicies
+        {
+            get { return activeObjectiveIndicies; }
+            set { activeObjectiveIndicies = value; }
         }
 
         public int ActiveRosterLength
@@ -175,9 +177,15 @@ namespace Assessments
                 {
                     objAndDescList.Add(splitHolder[0]);
                 }
+                ActiveObjectiveIndicies.Add(i);
             }
             TempObjectivesList = objectiveList;
             TempObjAndDescList = objAndDescList;
+        }
+
+        public void DetermineActiveObjectiveIndicies(string[] chapters)
+        {
+
         }
 
         /// <summary>
