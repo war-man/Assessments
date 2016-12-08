@@ -78,7 +78,6 @@
     <None Include="ClassDiagram.cd" />
     <None Include="Properties\DataSources\Assessments.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Assessments.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Objective.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Storage.datasource" />

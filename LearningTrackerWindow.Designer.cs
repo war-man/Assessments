@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearningTrackerWindow));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("2");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("3");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("4");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("5");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("6");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("7");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("8");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("9");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("2");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("3");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("4");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("5");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("6");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("7");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("8");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("9");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("10");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -67,14 +67,12 @@
             this.lvPartial = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.btnGoGroups = new System.Windows.Forms.Button();
-            this.lblPartialUpdate = new System.Windows.Forms.Label();
             this.lblUpdateComplete = new System.Windows.Forms.Label();
             this.lvObjectives = new System.Windows.Forms.ListView();
             this.objHead = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descHead = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvRoster = new System.Windows.Forms.ListView();
             this.btnPartial = new System.Windows.Forms.Button();
-            this.btnCompleted = new System.Windows.Forms.Button();
             this.lblObjectiveList = new System.Windows.Forms.Label();
             this.lblRosterClassHead = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -93,11 +91,12 @@
             this.btnStuAchieve = new System.Windows.Forms.Button();
             this.btnUnselectStudents = new System.Windows.Forms.Button();
             this.btnSelectAllStudents = new System.Windows.Forms.Button();
+            this.btnComplete = new System.Windows.Forms.Button();
+            this.btnUnSelectAllObj = new System.Windows.Forms.Button();
+            this.btnSelectAllObj = new System.Windows.Forms.Button();
+            this.btnShowAllObj = new System.Windows.Forms.Button();
             this.lvChapters = new System.Windows.Forms.ListView();
             this.btnShowChaptObj = new System.Windows.Forms.Button();
-            this.cb4 = new System.Windows.Forms.CheckBox();
-            this.cb3 = new System.Windows.Forms.CheckBox();
-            this.cb2 = new System.Windows.Forms.CheckBox();
             this.grpSelectClass = new System.Windows.Forms.GroupBox();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiClass = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,10 +129,10 @@
             // txtObjId
             // 
             this.txtObjId.AllowDrop = true;
-            this.txtObjId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObjId.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObjId.Location = new System.Drawing.Point(98, 46);
             this.txtObjId.Name = "txtObjId";
-            this.txtObjId.Size = new System.Drawing.Size(96, 23);
+            this.txtObjId.Size = new System.Drawing.Size(96, 27);
             this.txtObjId.TabIndex = 16;
             this.txtObjId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBxObjId_KeyDown);
             this.txtObjId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxObjId_KeyPress);
@@ -141,11 +140,11 @@
             // lblObjAddConfirm
             // 
             this.lblObjAddConfirm.AutoSize = true;
-            this.lblObjAddConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObjAddConfirm.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObjAddConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblObjAddConfirm.Location = new System.Drawing.Point(6, 177);
             this.lblObjAddConfirm.Name = "lblObjAddConfirm";
-            this.lblObjAddConfirm.Size = new System.Drawing.Size(31, 15);
+            this.lblObjAddConfirm.Size = new System.Drawing.Size(32, 18);
             this.lblObjAddConfirm.TabIndex = 26;
             this.lblObjAddConfirm.Text = "___";
             this.lblObjAddConfirm.Visible = false;
@@ -153,7 +152,7 @@
             // txtObjDesc
             // 
             this.txtObjDesc.AllowDrop = true;
-            this.txtObjDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObjDesc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObjDesc.Location = new System.Drawing.Point(98, 80);
             this.txtObjDesc.Multiline = true;
             this.txtObjDesc.Name = "txtObjDesc";
@@ -209,10 +208,10 @@
             // 
             // txtAddClass
             // 
-            this.txtAddClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddClass.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddClass.Location = new System.Drawing.Point(74, 49);
             this.txtAddClass.Name = "txtAddClass";
-            this.txtAddClass.Size = new System.Drawing.Size(128, 23);
+            this.txtAddClass.Size = new System.Drawing.Size(128, 27);
             this.txtAddClass.TabIndex = 1;
             this.txtAddClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddClass_KeyPress);
             // 
@@ -259,11 +258,11 @@
             // lblAddStudentConfirm
             // 
             this.lblAddStudentConfirm.AutoSize = true;
-            this.lblAddStudentConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddStudentConfirm.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddStudentConfirm.ForeColor = System.Drawing.Color.Black;
             this.lblAddStudentConfirm.Location = new System.Drawing.Point(4, 168);
             this.lblAddStudentConfirm.Name = "lblAddStudentConfirm";
-            this.lblAddStudentConfirm.Size = new System.Drawing.Size(31, 15);
+            this.lblAddStudentConfirm.Size = new System.Drawing.Size(32, 18);
             this.lblAddStudentConfirm.TabIndex = 3;
             this.lblAddStudentConfirm.Text = "___";
             this.lblAddStudentConfirm.Visible = false;
@@ -283,31 +282,31 @@
             // 
             // txtLName
             // 
-            this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(97, 83);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(89, 23);
+            this.txtLName.Size = new System.Drawing.Size(89, 26);
             this.txtLName.TabIndex = 3;
             this.txtLName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxLName_KeyPress);
             // 
             // txtFName
             // 
-            this.txtFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(97, 53);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(89, 23);
+            this.txtFName.Size = new System.Drawing.Size(89, 26);
             this.txtFName.TabIndex = 2;
             this.txtFName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBxFName_KeyDown);
             this.txtFName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxFName_KeyPress);
             // 
             // lbClasses
             // 
-            this.lbClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClasses.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClasses.FormattingEnabled = true;
-            this.lbClasses.ItemHeight = 18;
+            this.lbClasses.ItemHeight = 19;
             this.lbClasses.Location = new System.Drawing.Point(13, 23);
             this.lbClasses.Name = "lbClasses";
-            this.lbClasses.Size = new System.Drawing.Size(161, 58);
+            this.lbClasses.Size = new System.Drawing.Size(161, 42);
             this.lbClasses.TabIndex = 0;
             this.lbClasses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbClasses_KeyPress);
             // 
@@ -327,10 +326,10 @@
             // lblSortGroupList
             // 
             this.lblSortGroupList.AutoSize = true;
-            this.lblSortGroupList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortGroupList.Location = new System.Drawing.Point(9, 84);
+            this.lblSortGroupList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortGroupList.Location = new System.Drawing.Point(9, 100);
             this.lblSortGroupList.Name = "lblSortGroupList";
-            this.lblSortGroupList.Size = new System.Drawing.Size(23, 15);
+            this.lblSortGroupList.Size = new System.Drawing.Size(24, 17);
             this.lblSortGroupList.TabIndex = 19;
             this.lblSortGroupList.Text = "__";
             this.lblSortGroupList.Visible = false;
@@ -340,7 +339,7 @@
             this.lblGenerateGrpDesc.AutoSize = true;
             this.lblGenerateGrpDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerateGrpDesc.ForeColor = System.Drawing.Color.Teal;
-            this.lblGenerateGrpDesc.Location = new System.Drawing.Point(9, 39);
+            this.lblGenerateGrpDesc.Location = new System.Drawing.Point(9, 46);
             this.lblGenerateGrpDesc.Name = "lblGenerateGrpDesc";
             this.lblGenerateGrpDesc.Size = new System.Drawing.Size(125, 45);
             this.lblGenerateGrpDesc.TabIndex = 17;
@@ -357,7 +356,7 @@
             this.pnlGroups.Controls.Add(this.label5);
             this.pnlGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGroups.ForeColor = System.Drawing.Color.Teal;
-            this.pnlGroups.Location = new System.Drawing.Point(613, 479);
+            this.pnlGroups.Location = new System.Drawing.Point(613, 500);
             this.pnlGroups.Name = "pnlGroups";
             this.pnlGroups.Size = new System.Drawing.Size(507, 223);
             this.pnlGroups.TabIndex = 16;
@@ -366,6 +365,7 @@
             // 
             // btnCopyAll
             // 
+            this.btnCopyAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCopyAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCopyAll.FlatAppearance.BorderSize = 2;
             this.btnCopyAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
@@ -443,7 +443,7 @@
             this.btnGoGroups.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoGroups.ForeColor = System.Drawing.Color.Teal;
-            this.btnGoGroups.Location = new System.Drawing.Point(12, 3);
+            this.btnGoGroups.Location = new System.Drawing.Point(12, 10);
             this.btnGoGroups.Name = "btnGoGroups";
             this.btnGoGroups.Size = new System.Drawing.Size(133, 33);
             this.btnGoGroups.TabIndex = 11;
@@ -451,22 +451,13 @@
             this.btnGoGroups.UseVisualStyleBackColor = false;
             this.btnGoGroups.Click += new System.EventHandler(this.btnGoGroups_Click);
             // 
-            // lblPartialUpdate
-            // 
-            this.lblPartialUpdate.AutoSize = true;
-            this.lblPartialUpdate.Location = new System.Drawing.Point(344, 274);
-            this.lblPartialUpdate.Name = "lblPartialUpdate";
-            this.lblPartialUpdate.Size = new System.Drawing.Size(25, 13);
-            this.lblPartialUpdate.TabIndex = 9;
-            this.lblPartialUpdate.Text = "___";
-            this.lblPartialUpdate.Visible = false;
-            // 
             // lblUpdateComplete
             // 
             this.lblUpdateComplete.AutoSize = true;
-            this.lblUpdateComplete.Location = new System.Drawing.Point(344, 85);
+            this.lblUpdateComplete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateComplete.Location = new System.Drawing.Point(310, 290);
             this.lblUpdateComplete.Name = "lblUpdateComplete";
-            this.lblUpdateComplete.Size = new System.Drawing.Size(25, 13);
+            this.lblUpdateComplete.Size = new System.Drawing.Size(32, 17);
             this.lblUpdateComplete.TabIndex = 8;
             this.lblUpdateComplete.Text = "___";
             this.lblUpdateComplete.Visible = false;
@@ -478,12 +469,12 @@
             this.lvObjectives.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.objHead,
             this.descHead});
-            this.lvObjectives.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvObjectives.Font = new System.Drawing.Font("Times New Roman", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvObjectives.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvObjectives.LabelWrap = false;
-            this.lvObjectives.Location = new System.Drawing.Point(3, 70);
+            this.lvObjectives.Location = new System.Drawing.Point(3, 29);
             this.lvObjectives.Name = "lvObjectives";
-            this.lvObjectives.Size = new System.Drawing.Size(301, 345);
+            this.lvObjectives.Size = new System.Drawing.Size(301, 395);
             this.lvObjectives.TabIndex = 7;
             this.lvObjectives.UseCompatibleStateImageBehavior = false;
             this.lvObjectives.View = System.Windows.Forms.View.SmallIcon;
@@ -501,48 +492,37 @@
             // lvRoster
             // 
             this.lvRoster.CheckBoxes = true;
-            this.lvRoster.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvRoster.Font = new System.Drawing.Font("Times New Roman", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvRoster.Location = new System.Drawing.Point(3, 29);
             this.lvRoster.Name = "lvRoster";
-            this.lvRoster.Size = new System.Drawing.Size(172, 317);
+            this.lvRoster.Size = new System.Drawing.Size(172, 348);
             this.lvRoster.TabIndex = 6;
             this.lvRoster.TabStop = false;
             this.lvRoster.UseCompatibleStateImageBehavior = false;
             this.lvRoster.View = System.Windows.Forms.View.SmallIcon;
+            this.lvRoster.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvRoster_ItemChecked);
             // 
             // btnPartial
             // 
             this.btnPartial.BackColor = System.Drawing.Color.White;
             this.btnPartial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPartial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnPartial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPartial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPartial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPartial.Location = new System.Drawing.Point(347, 214);
+            this.btnPartial.Location = new System.Drawing.Point(407, 228);
             this.btnPartial.Name = "btnPartial";
-            this.btnPartial.Size = new System.Drawing.Size(120, 49);
+            this.btnPartial.Size = new System.Drawing.Size(66, 49);
             this.btnPartial.TabIndex = 5;
-            this.btnPartial.Text = "Confirm Partial\r\nCompletion";
+            this.btnPartial.Text = "Partial";
             this.btnPartial.UseVisualStyleBackColor = false;
             this.btnPartial.Click += new System.EventHandler(this.btnPartial_Click);
-            // 
-            // btnCompleted
-            // 
-            this.btnCompleted.BackColor = System.Drawing.Color.White;
-            this.btnCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompleted.ForeColor = System.Drawing.Color.Green;
-            this.btnCompleted.Location = new System.Drawing.Point(347, 29);
-            this.btnCompleted.Name = "btnCompleted";
-            this.btnCompleted.Size = new System.Drawing.Size(120, 44);
-            this.btnCompleted.TabIndex = 4;
-            this.btnCompleted.Text = "Confirm\r\nCompletion";
-            this.btnCompleted.UseVisualStyleBackColor = false;
-            this.btnCompleted.Click += new System.EventHandler(this.btnCompleted_Click);
             // 
             // lblObjectiveList
             // 
             this.lblObjectiveList.AutoSize = true;
             this.lblObjectiveList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjectiveList.Location = new System.Drawing.Point(89, 7);
+            this.lblObjectiveList.Location = new System.Drawing.Point(3, 8);
             this.lblObjectiveList.Name = "lblObjectiveList";
             this.lblObjectiveList.Size = new System.Drawing.Size(137, 18);
             this.lblObjectiveList.TabIndex = 3;
@@ -573,7 +553,7 @@
             this.panel1.Controls.Add(this.msMainMenu);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1173, 716);
+            this.panel1.Size = new System.Drawing.Size(1173, 726);
             this.panel1.TabIndex = 16;
             // 
             // pbLogo
@@ -594,9 +574,9 @@
             this.grpStuProgress.Controls.Add(this.lblStuProgCom);
             this.grpStuProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpStuProgress.ForeColor = System.Drawing.Color.Olive;
-            this.grpStuProgress.Location = new System.Drawing.Point(250, 475);
+            this.grpStuProgress.Location = new System.Drawing.Point(250, 499);
             this.grpStuProgress.Name = "grpStuProgress";
-            this.grpStuProgress.Size = new System.Drawing.Size(175, 201);
+            this.grpStuProgress.Size = new System.Drawing.Size(175, 212);
             this.grpStuProgress.TabIndex = 34;
             this.grpStuProgress.TabStop = false;
             this.grpStuProgress.Text = "Student Progress";
@@ -604,28 +584,28 @@
             // 
             // lbStuProgPart
             // 
-            this.lbStuProgPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStuProgPart.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStuProgPart.ForeColor = System.Drawing.Color.Black;
             this.lbStuProgPart.FormattingEnabled = true;
             this.lbStuProgPart.HorizontalScrollbar = true;
-            this.lbStuProgPart.ItemHeight = 15;
+            this.lbStuProgPart.ItemHeight = 19;
             this.lbStuProgPart.Location = new System.Drawing.Point(87, 45);
             this.lbStuProgPart.Name = "lbStuProgPart";
             this.lbStuProgPart.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbStuProgPart.Size = new System.Drawing.Size(70, 154);
+            this.lbStuProgPart.Size = new System.Drawing.Size(70, 156);
             this.lbStuProgPart.TabIndex = 4;
             // 
             // lbStuProgCom
             // 
-            this.lbStuProgCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStuProgCom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStuProgCom.ForeColor = System.Drawing.Color.Black;
             this.lbStuProgCom.FormattingEnabled = true;
             this.lbStuProgCom.HorizontalScrollbar = true;
-            this.lbStuProgCom.ItemHeight = 15;
+            this.lbStuProgCom.ItemHeight = 19;
             this.lbStuProgCom.Location = new System.Drawing.Point(9, 45);
             this.lbStuProgCom.Name = "lbStuProgCom";
             this.lbStuProgCom.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbStuProgCom.Size = new System.Drawing.Size(70, 154);
+            this.lbStuProgCom.Size = new System.Drawing.Size(70, 156);
             this.lbStuProgCom.TabIndex = 3;
             // 
             // lblStuProgPart
@@ -653,13 +633,14 @@
             this.lblFeedbackMessage.AutoEllipsis = true;
             this.lblFeedbackMessage.AutoSize = true;
             this.lblFeedbackMessage.BackColor = System.Drawing.Color.White;
+            this.lblFeedbackMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFeedbackMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFeedbackMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackMessage.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackMessage.ForeColor = System.Drawing.Color.Red;
             this.lblFeedbackMessage.Location = new System.Drawing.Point(391, 7);
             this.lblFeedbackMessage.Margin = new System.Windows.Forms.Padding(0);
             this.lblFeedbackMessage.Name = "lblFeedbackMessage";
-            this.lblFeedbackMessage.Size = new System.Drawing.Size(164, 24);
+            this.lblFeedbackMessage.Size = new System.Drawing.Size(167, 27);
             this.lblFeedbackMessage.TabIndex = 33;
             this.lblFeedbackMessage.Text = "Error Message Label";
             this.lblFeedbackMessage.UseCompatibleTextRendering = true;
@@ -670,9 +651,9 @@
             this.pnlGenerateGroups.Controls.Add(this.btnGoGroups);
             this.pnlGenerateGroups.Controls.Add(this.lblSortGroupList);
             this.pnlGenerateGroups.Controls.Add(this.lblGenerateGrpDesc);
-            this.pnlGenerateGroups.Location = new System.Drawing.Point(454, 476);
+            this.pnlGenerateGroups.Location = new System.Drawing.Point(454, 502);
             this.pnlGenerateGroups.Name = "pnlGenerateGroups";
-            this.pnlGenerateGroups.Size = new System.Drawing.Size(153, 211);
+            this.pnlGenerateGroups.Size = new System.Drawing.Size(153, 221);
             this.pnlGenerateGroups.TabIndex = 32;
             this.pnlGenerateGroups.Visible = false;
             this.pnlGenerateGroups.Enter += new System.EventHandler(this.pnlGenerateGroups_Enter);
@@ -725,7 +706,7 @@
             this.grpAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.grpAddClass.Location = new System.Drawing.Point(16, 317);
             this.grpAddClass.Name = "grpAddClass";
-            this.grpAddClass.Size = new System.Drawing.Size(219, 133);
+            this.grpAddClass.Size = new System.Drawing.Size(219, 156);
             this.grpAddClass.TabIndex = 29;
             this.grpAddClass.TabStop = false;
             this.grpAddClass.Text = "Create New Class";
@@ -734,7 +715,7 @@
             // 
             // scRosterDisplay
             // 
-            this.scRosterDisplay.Location = new System.Drawing.Point(250, 43);
+            this.scRosterDisplay.Location = new System.Drawing.Point(250, 37);
             this.scRosterDisplay.Name = "scRosterDisplay";
             // 
             // scRosterDisplay.Panel1
@@ -748,19 +729,18 @@
             // 
             // scRosterDisplay.Panel2
             // 
+            this.scRosterDisplay.Panel2.Controls.Add(this.btnComplete);
+            this.scRosterDisplay.Panel2.Controls.Add(this.btnUnSelectAllObj);
+            this.scRosterDisplay.Panel2.Controls.Add(this.btnSelectAllObj);
+            this.scRosterDisplay.Panel2.Controls.Add(this.btnShowAllObj);
             this.scRosterDisplay.Panel2.Controls.Add(this.lvChapters);
             this.scRosterDisplay.Panel2.Controls.Add(this.btnShowChaptObj);
-            this.scRosterDisplay.Panel2.Controls.Add(this.cb4);
-            this.scRosterDisplay.Panel2.Controls.Add(this.cb3);
-            this.scRosterDisplay.Panel2.Controls.Add(this.cb2);
             this.scRosterDisplay.Panel2.Controls.Add(this.lvObjectives);
             this.scRosterDisplay.Panel2.Controls.Add(this.lblObjectiveList);
-            this.scRosterDisplay.Panel2.Controls.Add(this.btnCompleted);
             this.scRosterDisplay.Panel2.Controls.Add(this.lblUpdateComplete);
             this.scRosterDisplay.Panel2.Controls.Add(this.btnPartial);
-            this.scRosterDisplay.Panel2.Controls.Add(this.lblPartialUpdate);
             this.scRosterDisplay.Panel2.Enter += new System.EventHandler(this.scRosterDisplay_Panel2_Enter);
-            this.scRosterDisplay.Size = new System.Drawing.Size(674, 427);
+            this.scRosterDisplay.Size = new System.Drawing.Size(674, 456);
             this.scRosterDisplay.SplitterDistance = 194;
             this.scRosterDisplay.TabIndex = 22;
             this.scRosterDisplay.Visible = false;
@@ -770,7 +750,7 @@
             this.btnStuAchieve.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStuAchieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStuAchieve.ForeColor = System.Drawing.Color.Olive;
-            this.btnStuAchieve.Location = new System.Drawing.Point(6, 399);
+            this.btnStuAchieve.Location = new System.Drawing.Point(6, 428);
             this.btnStuAchieve.Name = "btnStuAchieve";
             this.btnStuAchieve.Size = new System.Drawing.Size(169, 25);
             this.btnStuAchieve.TabIndex = 9;
@@ -783,7 +763,7 @@
             this.btnUnselectStudents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnselectStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnselectStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnUnselectStudents.Location = new System.Drawing.Point(86, 352);
+            this.btnUnselectStudents.Location = new System.Drawing.Point(87, 383);
             this.btnUnselectStudents.Name = "btnUnselectStudents";
             this.btnUnselectStudents.Size = new System.Drawing.Size(89, 39);
             this.btnUnselectStudents.TabIndex = 8;
@@ -796,7 +776,7 @@
             this.btnSelectAllStudents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectAllStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectAllStudents.ForeColor = System.Drawing.Color.Red;
-            this.btnSelectAllStudents.Location = new System.Drawing.Point(6, 352);
+            this.btnSelectAllStudents.Location = new System.Drawing.Point(5, 383);
             this.btnSelectAllStudents.Name = "btnSelectAllStudents";
             this.btnSelectAllStudents.Size = new System.Drawing.Size(74, 39);
             this.btnSelectAllStudents.TabIndex = 7;
@@ -804,81 +784,114 @@
             this.btnSelectAllStudents.UseVisualStyleBackColor = true;
             this.btnSelectAllStudents.Click += new System.EventHandler(this.btnSelectAllStudents_Click);
             // 
+            // btnComplete
+            // 
+            this.btnComplete.BackColor = System.Drawing.Color.White;
+            this.btnComplete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnComplete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComplete.ForeColor = System.Drawing.Color.Green;
+            this.btnComplete.Location = new System.Drawing.Point(308, 227);
+            this.btnComplete.Name = "btnComplete";
+            this.btnComplete.Size = new System.Drawing.Size(93, 49);
+            this.btnComplete.TabIndex = 19;
+            this.btnComplete.Text = "Completion";
+            this.btnComplete.UseVisualStyleBackColor = false;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
+            // 
+            // btnUnSelectAllObj
+            // 
+            this.btnUnSelectAllObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUnSelectAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnSelectAllObj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnUnSelectAllObj.Location = new System.Drawing.Point(150, 430);
+            this.btnUnSelectAllObj.Name = "btnUnSelectAllObj";
+            this.btnUnSelectAllObj.Size = new System.Drawing.Size(92, 23);
+            this.btnUnSelectAllObj.TabIndex = 18;
+            this.btnUnSelectAllObj.Text = "Unselect All";
+            this.btnUnSelectAllObj.UseVisualStyleBackColor = true;
+            this.btnUnSelectAllObj.Click += new System.EventHandler(this.btnUnSelectAllObj_Click);
+            // 
+            // btnSelectAllObj
+            // 
+            this.btnSelectAllObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectAllObj.ForeColor = System.Drawing.Color.Red;
+            this.btnSelectAllObj.Location = new System.Drawing.Point(52, 430);
+            this.btnSelectAllObj.Name = "btnSelectAllObj";
+            this.btnSelectAllObj.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAllObj.TabIndex = 17;
+            this.btnSelectAllObj.Text = "Select All";
+            this.btnSelectAllObj.UseVisualStyleBackColor = true;
+            this.btnSelectAllObj.Click += new System.EventHandler(this.btnSelectAllObj_Click);
+            // 
+            // btnShowAllObj
+            // 
+            this.btnShowAllObj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnShowAllObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAllObj.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnShowAllObj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnShowAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllObj.Location = new System.Drawing.Point(308, 29);
+            this.btnShowAllObj.Margin = new System.Windows.Forms.Padding(1);
+            this.btnShowAllObj.Name = "btnShowAllObj";
+            this.btnShowAllObj.Size = new System.Drawing.Size(50, 45);
+            this.btnShowAllObj.TabIndex = 16;
+            this.btnShowAllObj.Text = "Show All";
+            this.btnShowAllObj.UseVisualStyleBackColor = false;
+            this.btnShowAllObj.Click += new System.EventHandler(this.btnShowAllObj_Click);
+            // 
             // lvChapters
             // 
-            this.lvChapters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lvChapters.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.lvChapters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lvChapters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvChapters.CheckBoxes = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
+            this.lvChapters.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            listViewItem19.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.StateImageIndex = 0;
+            listViewItem24.StateImageIndex = 0;
+            listViewItem25.StateImageIndex = 0;
+            listViewItem26.StateImageIndex = 0;
+            listViewItem27.StateImageIndex = 0;
             this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
-            this.lvChapters.Location = new System.Drawing.Point(6, 28);
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26,
+            listViewItem27});
+            this.lvChapters.Location = new System.Drawing.Point(407, 29);
             this.lvChapters.Name = "lvChapters";
-            this.lvChapters.Size = new System.Drawing.Size(220, 41);
+            this.lvChapters.Size = new System.Drawing.Size(62, 177);
             this.lvChapters.TabIndex = 15;
             this.lvChapters.UseCompatibleStateImageBehavior = false;
-            this.lvChapters.View = System.Windows.Forms.View.List;
+            this.lvChapters.View = System.Windows.Forms.View.SmallIcon;
             // 
             // btnShowChaptObj
             // 
-            this.btnShowChaptObj.Location = new System.Drawing.Point(229, 33);
+            this.btnShowChaptObj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnShowChaptObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowChaptObj.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnShowChaptObj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnShowChaptObj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnShowChaptObj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowChaptObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowChaptObj.Location = new System.Drawing.Point(308, 84);
+            this.btnShowChaptObj.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowChaptObj.Name = "btnShowChaptObj";
-            this.btnShowChaptObj.Size = new System.Drawing.Size(75, 23);
+            this.btnShowChaptObj.Size = new System.Drawing.Size(65, 46);
             this.btnShowChaptObj.TabIndex = 14;
-            this.btnShowChaptObj.Text = "Show Only";
-            this.btnShowChaptObj.UseVisualStyleBackColor = true;
+            this.btnShowChaptObj.Text = "Show Selected";
+            this.btnShowChaptObj.UseVisualStyleBackColor = false;
             this.btnShowChaptObj.Click += new System.EventHandler(this.btnShowChaptObj_Click);
-            // 
-            // cb4
-            // 
-            this.cb4.AutoSize = true;
-            this.cb4.Location = new System.Drawing.Point(324, 11);
-            this.cb4.Margin = new System.Windows.Forms.Padding(2);
-            this.cb4.Name = "cb4";
-            this.cb4.Size = new System.Drawing.Size(32, 17);
-            this.cb4.TabIndex = 13;
-            this.cb4.Tag = "4";
-            this.cb4.Text = "4";
-            this.cb4.UseVisualStyleBackColor = true;
-            // 
-            // cb3
-            // 
-            this.cb3.AutoSize = true;
-            this.cb3.Location = new System.Drawing.Point(288, 11);
-            this.cb3.Margin = new System.Windows.Forms.Padding(2);
-            this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(32, 17);
-            this.cb3.TabIndex = 12;
-            this.cb3.Tag = "3";
-            this.cb3.Text = "3";
-            this.cb3.UseVisualStyleBackColor = true;
-            // 
-            // cb2
-            // 
-            this.cb2.AutoSize = true;
-            this.cb2.Location = new System.Drawing.Point(252, 11);
-            this.cb2.Margin = new System.Windows.Forms.Padding(2);
-            this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(32, 17);
-            this.cb2.TabIndex = 10;
-            this.cb2.Tag = "2";
-            this.cb2.Text = "2";
-            this.cb2.UseVisualStyleBackColor = true;
             // 
             // grpSelectClass
             // 
@@ -1062,11 +1075,9 @@
         private System.Windows.Forms.Label lblObjectiveList;
         private System.Windows.Forms.Label lblRosterClassHead;
         private System.Windows.Forms.Button btnPartial;
-        private System.Windows.Forms.Button btnCompleted;
         private System.Windows.Forms.ListView lvRoster;
         private System.Windows.Forms.ListView lvObjectives;
         private System.Windows.Forms.Label lblUpdateComplete;
-        private System.Windows.Forms.Label lblPartialUpdate;
         private System.Windows.Forms.Panel pnlGroups;
         private System.Windows.Forms.ListView lvNot;
         private System.Windows.Forms.Label label2;
@@ -1127,10 +1138,11 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.Button btnShowChaptObj;
-        private System.Windows.Forms.CheckBox cb4;
-        private System.Windows.Forms.CheckBox cb3;
-        private System.Windows.Forms.CheckBox cb2;
         private System.Windows.Forms.ListView lvChapters;
+        private System.Windows.Forms.Button btnShowAllObj;
+        private System.Windows.Forms.Button btnUnSelectAllObj;
+        private System.Windows.Forms.Button btnSelectAllObj;
+        private System.Windows.Forms.Button btnComplete;
     }
 }
 

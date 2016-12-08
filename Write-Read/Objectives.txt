@@ -1,35 +1,64 @@
-﻿2.1(1)*missing parts of 6 & 7*
-2.2(2)*missing parts of 8*
-2.3(5)*missing parts of 9*
-2.4(6)*write sub. # sentence*
-2.5(3)*sub sent. about taking away*
-2.6(4)*stories about comparing*
-2.7(2)*know the whole part? other part*
-2.8(9)*solve diff. sub. stories*
-2.9(7)*write related + & - facts*
-2.10(8)*identify sub. sent. true same model*
-2.11(3)*stories about taking away
-3.1(1)*use ten frame/#'s up to 10*
-3.2(2)*recognize # on tem frame; relate to 5/10*
-3.3(3)*show 10 as two parts*
-3.4(4-5)*part-part-whole to find missing parts of ten*
-3.5(6)*make tables to solve problems*
-4.1(1)*count on to add start w/greater #*
-4.2(5)*use doubles add. facts to master related sub. facts*
-4.3(3)*use doubles facts learn near doubles*
-4.4(2)*use 10-frame to write addition facts w/5*
-4.5(4)*make 10 on a ten-frame*
-4.6(6)*0 less than, 1 less than, 2 less than*
-4.7(5)*use doubles add. facts to master related sub. facts*
-4.8(7)*add. facts to 8 relate to sub. facts to 8*
-4.9(8)*write related add./sub. facts to 12*
-4.10(9)*draw/write # sent. to solve sub. story problem*
-5.1(1)*add doubles*
-5.2(2)*doubles + 1 facts*
-5.3(3)*doubles + 2 facts*
-5.4(5)*two ? problems*
-5.5(8)*make 10 to add*
-5.6(6)*make 10 to add 9*
-5.7(7)*make 10 to add 8*
-5.8(4)*add three numbers*
-5.9(9)*solve word prob. w/ 3 addends*
+﻿2.1 (1)*missing parts of 6 & 7*
+2.2 (2)*missing parts of 8*
+2.3 (5)*missing parts of 9*
+2.4 (6)*write sub. # sentence*
+2.5 (3)*sub sent. about taking away*
+2.6 (4)*stories about comparing*
+2.7 (2)*know the whole part? other part*
+2.8 (9)*solve diff. sub. stories*
+2.9 (7)*write related + & - facts*
+2.10 (8)*identify sub. sent. true same model*
+2.11 (3)*stories about taking away
+3.1 (1)*use ten frame/#'s up to 10*
+3.2 (2)*recognize # on tem frame; relate to 5/10*
+3.3 (3)*show 10 as two parts*
+3.4 (4-5)*part-part-whole to find missing parts of ten*
+3.5 (6)*make tables to solve problems*
+4.1 (1)*count on to add start w/greater #*
+4.2 (5)*use doubles add. facts to master related sub. facts*
+4.3 (3)*use doubles facts learn near doubles*
+4.4 (2)*use 10-frame to write addition facts w/5*
+4.5 (4)*make 10 on a ten-frame*
+4.6 (6)*0 less than, 1 less than, 2 less than*
+4.7 (5)*use doubles add. facts to master related sub. facts*
+4.8 (7)*add. facts to 8 relate to sub. facts to 8*
+4.9 (8)*write related add./sub. facts to 12*
+4.10 (9)*draw/write # sent. to solve sub. story problem*
+5.1 (1)*add doubles*
+5.2 (2)*doubles + 1 facts*
+5.3 (3)*doubles + 2 facts*
+5.4 (5)*two ? problems*
+5.5 (8)*make 10 to add*
+5.6 (6)*make 10 to add 9*
+5.7 (7)*make 10 to add 8*
+5.8 (4)*add three numbers*
+5.9 (9)*solve word prob. w/ 3 addends*
+6.1 (3)*make 10 to subtract*
+6.2 (3)*make 10 to subtract*
+6.3 (1)*sub. facts to 20 relation between + -*
+6.4 (2)*part-part whole model + & - in fact family*
+6.5 (5)*use add. facts to find missing part in sub.*
+6.6 (4)*use add. fact to solve sub. problem*
+6.7 (6)*draw/write # sent. to solve problems*
+7.1 (1)*write numbers 11-19.*
+7.2 (2, 3)*show numbers 11-19 as 1 or 2 more or fewer than another number*
+7.3 (4)*count groups of 10*
+7.4 (5, 6)*count on a number chart*
+7.5 (7)*count by 10s*
+8.1 (1, 2)*read/write 2-digit # as groups of 10 and some left over*
+8.2 (3)*count groups of ten (up to 100) and write how many*
+8.3 (4)*use groups of tens/ones to show/write given 2-digit #*
+8.4 (5)*model a 2-digit # and write expanded form*
+8.5 (6)*break apart a ten to make 10 ones and write in expanded form*
+8.6 (7)*solve problems by making a list to show diff. ways to make a number*
+9.1 (1, 5)*write numbers that are 1 more or 1 less than a 2-digit number*
+9.2 (2, 4)*use a 100 chart to show +1, -1, +10, -10 than a given number*
+9.3 (3, 6)*compare 2-digit # using models*
+9.4 (7)*compare 2-digit # using symbols*
+9.5 (8)*make organized lists to solve problems*
+10.1 (1)*add two multiples of 10*
+10.2 (2)*use a 100 chart to add mult. of 10 to 2-digit #'s*
+10.3 (3)*add a multiple of 10 to a 2-digit number*
+10.4 (5, 6, 7)*add a multiple of 10 to a 2-digit # mentally*
+10.5 (4, 8)*add 1-digit #'s to 2-digit #'s with/w/o regrouping*
+10.6 (9)*solve problems by drawing pictures*

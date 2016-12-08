@@ -10,14 +10,12 @@ namespace Assessments
     {
         #region Class Fields and Properties
         private string currentClassId;
-        //private List<string> tempRosterList = new List<string>();
         private List<string> tempClassIdList = new List<string>();
         private List<string> tempObjectivesList = new List<string>();
         private List<string> tempObjectiveWDescList = new List<string>();
         private List<Student> tempStudentObjectList = new List<Student>();
-        private List<int> activeStudentObjectIndicies = new List<int>();
-        private List<int> activeObjectiveIndicies = new List<int>();
-        //private int activeObjectIndiciesLenth;
+        private List<int> activeStudentObjectIndices = new List<int>();
+        private List<int> activeObjectiveIndices = new List<int>();
         private int activeRosterLength;
 
         public string CurrentClassID
@@ -50,16 +48,16 @@ namespace Assessments
             set { tempStudentObjectList = value; }
         }
 
-        public List<int> ActiveStudentObjectIndicies
+        public List<int> ActiveStudentObjectIndices
         {
-            get { return activeStudentObjectIndicies; }
-            set { activeStudentObjectIndicies = value; }
+            get { return activeStudentObjectIndices; }
+            set { activeStudentObjectIndices = value; }
         }
 
-        public List<int> ActiveObjectiveIndicies
+        public List<int> ActiveObjectiveIndices
         {
-            get { return activeObjectiveIndicies; }
-            set { activeObjectiveIndicies = value; }
+            get { return activeObjectiveIndices; }
+            set { activeObjectiveIndices = value; }
         }
 
         public int ActiveRosterLength
@@ -158,6 +156,7 @@ namespace Assessments
         {
             List<string> objectiveList = new List<string>();
             List<string> objAndDescList = new List<string>();
+            List<int> activeObjectiveList = new List<int>();
 
             string[] lines = System.IO.File.ReadAllLines(@"../../Write-Read/Objectives.txt");
             int linesCount = lines.Length;
@@ -177,15 +176,35 @@ namespace Assessments
                 {
                     objAndDescList.Add(splitHolder[0]);
                 }
-                ActiveObjectiveIndicies.Add(i);
+                activeObjectiveList.Add(i);
             }
             TempObjectivesList = objectiveList;
             TempObjAndDescList = objAndDescList;
+            ActiveObjectiveIndices = activeObjectiveList;
         }
 
         public void DetermineActiveObjectiveIndicies(string[] chapters)
         {
-
+            ActiveObjectiveIndices.Clear();
+            int i = 0;
+            foreach (string id in TempObjectivesList)
+            {
+                bool keep = false;
+                foreach (string chap in chapters)
+                {
+                    string temp = chap + ".";
+                    if (id.Contains(temp))
+                    {
+                        keep = true;
+                        break;
+                    }
+                }
+                if (keep == true)
+                {
+                    ActiveObjectiveIndices.Add(i);
+                }
+                ++i;
+            }
         }
 
         /// <summary>
@@ -267,7 +286,7 @@ namespace Assessments
                 }
             }
             ActiveRosterLength = tempIndicies.Count();//stores number of students who belong to currentclassID.
-            ActiveStudentObjectIndicies = tempIndicies;
+            ActiveStudentObjectIndices = tempIndicies;
 
        
         }
