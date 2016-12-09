@@ -100,6 +100,7 @@
     <Content Include="bin\Debug\Assessments.pdb" />
     <Content Include="bin\Debug\Assessments.vshost.exe" />
     <Content Include="Write-Read\ClassID.txt" />
+    <Content Include="Write-Read\GroupsClipboard.txt" />
     <Content Include="Write-Read\Objectives.txt" />
     <Content Include="Write-Read\Students.txt" />
   </ItemGroup>

@@ -13,6 +13,17 @@ namespace Assessments
     public partial class LearningTrackerWindow : Form
 
     {
+        /*this variable is designed to be changed when optimizing code to be run
+         * on a mac via Mono framework or to be used as 'normal' on windows.net
+         * framework.  Variable primarily generated to provide workaround for 
+         * inability to use .net methods to copy to clipboard on mac os */
+        private bool mac;
+        public bool Mac
+        {
+            get { return mac; }
+            set { mac = value; }
+        }
+        
         /*establishes instance of storage object at application inception.
         storage object is used to load currently existing data from file
         as well as hold, manipulate, and save any updates or changes that
@@ -28,19 +39,22 @@ namespace Assessments
         //constructor of windows form (GUI window)
         public LearningTrackerWindow()
         {
-            InitializeComponent();
-            ToDoOnLoad();
+            InitializeComponent();//native method
+            ToDoOnLoad();//own generated method
         }
 
         /// <summary>
         /// Contains sequence of methods to execute immediately upon generation of form.
         /// Items include loading existing data into newly generated instance of storage object
         /// to be used during existence of form.  
-        /// Calls methods to load existing class IDs, learning objectives, and to read each existing
+        /// Calls methods to determine if Mac options should 
+        /// be "on" or "off", load existing class IDs, learning objectives, and to read each existing
         /// student data line and create an object for each individual student.
         /// </summary>
         private void ToDoOnLoad()
         {
+            //determine if Optimize for Mac box is checked
+            OPTIMIZE_FOR_MAC_OPTION();
             //load current class id list from file to storage object
             sto.GetClassIdsFromFile();
             //load current objective list from file to storage object
@@ -51,6 +65,36 @@ namespace Assessments
             sto.CreateStudentObjects();
             //initialized form to display menu where user can select to load existing class (if any)
             DisplayExistingClasses();
+        }
+
+        /// <summary>
+        /// Determines if "Optimize for Mac" checkbox option is selected.  If it is selected
+        /// the learningWindow boolean 'Mac' is set to true, else it is set to false.
+        /// Primarily designed to implement workabout of inability to copy to clipboard
+        /// on Mac OS.
+        /// </summary>
+        private void OPTIMIZE_FOR_MAC_OPTION()
+        {
+            bool currentState = cbxMac.Checked; //current state of checkbox
+            if (currentState == true)
+            {
+                Mac = true;
+            }
+            else
+            {
+                Mac = false;
+            }
+            //throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Executed when checkbox state of "Optimize for Mac" option is changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbxMac_CheckedChanged(object sender, EventArgs e)
+        {
+            OPTIMIZE_FOR_MAC_OPTION();
         }
 
         #region Load Class Roster & Objectives
@@ -155,7 +199,6 @@ namespace Assessments
                     chapters[i] = item.Text.Trim();//places checked box's chapter number text string into array
                     ++i;
                 }
-
                 sto.DetermineActiveObjectiveIndicies(chapters);//to store absolute index values of objectives that will be relatively displayed.
                 DisplaySpecificObjectives();//re-populates objective box with specific chapters' objectives.
             }
@@ -264,8 +307,7 @@ namespace Assessments
                 lblFeedbackMessage.Visible = true;
             }
         }
-
-
+        
         /// <summary>
         /// Method will generate list of students who are in current selected class using the temporary student object
         /// list in sto object.  Each time this method is called, the indices of the students in the active selected
@@ -334,9 +376,8 @@ namespace Assessments
             }
         }
 
-        //
-        private void lvRoster_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
+        //private void lvRoster_ItemChecked(object sender, ItemCheckedEventArgs e)
+        //{
             //lblFeedbackMessage.Visible = false;
             //bool go = false;
             //int count = lvRoster.Items.Count;
@@ -352,7 +393,7 @@ namespace Assessments
             //{
             //    lblUpdateComplete.Visible = false;
             //}
-        }
+        //}
         //
 
         /// <summary>
@@ -402,10 +443,9 @@ namespace Assessments
                 txtAddClass.Focus();
             }
         }
+        
         #endregion
-
-        #region Add / Update / Group Students
-
+        
         #region Objective Completed Buttons
 
         /// <summary>
@@ -630,7 +670,9 @@ namespace Assessments
             }
         }
         #endregion
-
+        
+        #region Add / Update / Group Students
+           
         /// <summary>
         /// Executes when the menuItem to add new student is clicked.  Add student 'grp panel' with student
         /// fields will display.
@@ -856,22 +898,23 @@ namespace Assessments
                             }
                         }
                     }
-                    lblSortGroupList.Text = "The objectives used\nas criteria for this\nsort were:\n";
+                    lblSortGroupList.Text = "The objective()s used\nas criteria for this\nsort was/were:";
                     int objCount = currentSelectedObjectives.Count();
                     if (objCount > 3)//just display three objectives and tell how many more there were (instead of having a huge list).
                     {
+                        //lblSortGroupList.Text += "\n";//adds line break to message
                         for (int i = 0; i < 3; ++i)
                         {
-                            lblSortGroupList.Text += currentSelectedObjectives[i] + "\n";
+                            lblSortGroupList.Text += "\n" + currentSelectedObjectives[i];
                         }
                         int diff = objCount - 3;
-                        lblSortGroupList.Text += "And " + diff + " others.";
+                        lblSortGroupList.Text += "\nAnd " + diff + " other(s).";
                     }
                     else
                     {
-                        foreach (string s in currentSelectedObjectives)
+                        for (int i = 0; i < objCount; ++i)
                         {
-                            lblSortGroupList.Text += s + "\n";
+                            lblSortGroupList.Text += "\n" + currentSelectedObjectives[i];
                         }
                     }
                     lblSortGroupList.Visible = true;
@@ -901,11 +944,46 @@ namespace Assessments
         //"Copy Groups to Clipboard" button click
         private void btnCopyAll_Click(object sender, EventArgs e)
         {
+            if (Mac == false)
+            {
+                StringBuilder sb = CopyAllGroupBoxesString();
+                Clipboard.SetData(System.Windows.Forms.DataFormats.Text, sb);/*copies final stringBuilder object
+            to clipboard*/
+                lblFeedbackMessage.Text = "Group data has been copied to the clipboard.\nYou should be able to paste into a document.";
+                lblFeedbackMessage.Visible = true;//message just to confirm to user that the material was copied.
+            }
+            else//if Mac boolean == true!
+            {
+                StringBuilder macSb = CopyAllGroupBoxesString();
+                string macSbString = macSb.ToString();
+                macSbString.Trim();
+                using (System.IO.StreamWriter file =
+                    new System.IO.StreamWriter(@"../../Write-Read/GroupsClipboard.txt", false))
+                {
+                    file.WriteLine(macSbString);
+                }
+                lblFeedbackMessage.Text = "Group data has been copied to the GroupsClipboard.txt file.";
+                lblFeedbackMessage.Visible = true;//message just to confirm to user that the material was copied.
+            }
+        }
+
+        /// <summary>
+        /// Generates stringBuilder object with current group data from "generate groups" panel
+        /// includes descriptive headings and identifies objectives used for grouping.
+        /// </summary>
+        /// <returns>StringBuilder object</returns>
+        private StringBuilder CopyAllGroupBoxesString()
+        {
             lblFeedbackMessage.Visible = false;
             StringBuilder fullSb = new StringBuilder();//will hold the full strings element to copy to clipboard.
             string temp;//will hold the list of strings from each box
-
-            CopyListViewToClipboard(lvCompleted, out temp);//generates strings for items in "Completed Box"
+            temp = lblSortGroupList.Text;
+            string barrier = "--------------------";
+            fullSb.AppendLine(barrier);
+            fullSb.AppendLine(temp);
+            fullSb.AppendLine(barrier);
+            fullSb.AppendLine();
+            CopyListViewBox(lvCompleted, out temp);//generates strings for items in "Completed Box"
             fullSb.AppendLine("**COMPLETE**");
             if (temp == null)//nothing was in the "Completed" box
             {
@@ -917,7 +995,7 @@ namespace Assessments
                 fullSb.AppendLine(temp);//places temp strings under the heading **COMPLETE**
             }
 
-            CopyListViewToClipboard(lvPartial, out temp);/*generates strings for items in 
+            CopyListViewBox(lvPartial, out temp);/*generates strings for items in 
             "Partially Completed" box overwrites (or just changes pointer) the temp string used previously*/
             fullSb.AppendLine("**PARTIALLY**");
             if (temp == null)//nothing was in the partially completed box
@@ -930,7 +1008,7 @@ namespace Assessments
                 fullSb.AppendLine(temp);//places temp strings under the heading *Partially*
             }
 
-            CopyListViewToClipboard(lvNot, out temp);//generates strings for items in "Incomplete" box
+            CopyListViewBox(lvNot, out temp);//generates strings for items in "Incomplete" box
             fullSb.AppendLine("**INCOMPLETE**");
             if (temp == null)//if no items were in the incomplete box
             {
@@ -941,18 +1019,15 @@ namespace Assessments
             {
                 fullSb.AppendLine(temp);//places temp strings under the heading "Incomplete"
             }
-            Clipboard.SetData(System.Windows.Forms.DataFormats.Text, fullSb);/*copies final stringBuilder object
-            to clipboard*/
-            lblFeedbackMessage.Text = "Group data has been copied to the clipboard.\nYou should be able to paste into a document.";
-            lblFeedbackMessage.Visible = true;//message just to confirm to user that the material was copied.
+            return fullSb;
         }
 
         /// <summary>
-        /// Copies all existing items in ListViewBox to clipboard.  Over-writes any existing clipboard data.  During paste,
-        /// each separate item is displayed on a separate line (row).
+        /// Gets all items in passed listview box and stores them in a string.  
+        /// Each item is contained on separate line.
         /// </summary>
         /// <param name="listViewBox">ListView display box to copy existing items from</param>
-        private void CopyListViewToClipboard(ListView listViewBox, out string sbString)
+        private void CopyListViewBox(ListView listViewBox, out string sbString)
         {
             int count = listViewBox.Items.Count;//how many items are in the listview box
             if (count > 0)//will go in if the box is not empty
@@ -976,7 +1051,7 @@ namespace Assessments
         }
 
         #endregion
-        
+
         #region Add New Objective
         /// <summary>
         /// Executes when the menuItem to add learning objective is clicked.  Group 'panel' with objective
@@ -1101,9 +1176,7 @@ namespace Assessments
         #endregion
 
         #region Menu Item Hover Display Controls
-
-        bool obj1Drop = false, obj2Drop = false, obj3Drop = false, obj4Drop = false;
-        
+        //bool obj1Drop = false, obj2Drop = false, obj3Drop = false, obj4Drop = false;
         //private bool NO_CURSOR_IN_MENU()
         //{
         //    bool returnVal;
@@ -1124,14 +1197,7 @@ namespace Assessments
             tsmiClass.HideDropDown();
             tsmiStudents.HideDropDown();
             tsmiLearningObjectives.ShowDropDown();
-
         }
-
-        private void msMainMenu_MouseLeave(object sender, EventArgs e)
-        {
-            //tsmiLearningObjectives.HideDropDown();
-        }
-
 
         /// <summary>
         /// Executes when mouse enters "Group Students By" menu item box.
@@ -1142,7 +1208,6 @@ namespace Assessments
         {
             grpLearnObj.Visible = false; //Hides add learning objective panel group so the rest of the menu item can display cleanly.
             tsmiGroups.ShowDropDown();
-            //obj3Drop = true;
         }
 
         private void tsmiGroupByObj_Click(object sender, EventArgs e)
@@ -1229,8 +1294,7 @@ namespace Assessments
                     btnAddClass_Click(sender, e);
                 }
         }
-
-
+        
         private void txtBxFName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WAS_ENTER_PRESSED(e.KeyChar))
@@ -1255,9 +1319,7 @@ namespace Assessments
                 btnAddStudent_Click_1(sender, e);
             }
         }
-
-
-
+        
         private void txtBxObjId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WAS_ENTER_PRESSED(e.KeyChar))
@@ -1265,7 +1327,7 @@ namespace Assessments
                 btnAddObjective_Click(sender, e);
             }
         }
-
+        
         private void txtBxObjDesc_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (txtObjId.Text.Trim() != "" && txtObjId.Text.Trim() != null)
@@ -1285,8 +1347,7 @@ namespace Assessments
                 btnSelectClass_Click(sender, e);
             }
         }
-
-
+        
         private void btnSelectClass_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (WAS_ENTER_PRESSED(e.KeyChar))
@@ -1294,13 +1355,6 @@ namespace Assessments
                 btnSelectClass_Click(sender, e);
             }
         }
-
-
-
-
-
-
-
 
         /// <summary>
         /// Determines if Enter key was pressed by user
@@ -1317,109 +1371,6 @@ namespace Assessments
             return value;
         }
         #endregion
-
-        #region UNUSED CODE
-        //private void btnLoadClass_Click(object sender, EventArgs e)
-        //{
-        //    //what about loading a class if id has not been created yet?
-        //    //Storage stor = new Storage();
-        //    DetermineUserClassId();
-        //    storageObject.GetNameRoster(storageObject.CurrentClassID);
-        //}
-
-        //private void DetermineUserClassId()
-        //{
-        //    lsBxMMSelClass.Focus();
-        //    int index = lsBxMMSelClass.SelectedIndex;
-        //    string selected = lsBxMMSelClass.SelectedText;
-        //    if (index >= 0 && selected != "")
-        //    {
-        //        selected = lsBxMMSelClass.SelectedItem.ToString();
-        //        storageObject.AddClassIdToFile(selected);
-        //    }
-        //    else if (index < 0)
-        //    {
-        //        storageObject.AddClassIdToFile(selected);
-        //    }
-        //    else if (selected == "")
-        //    {
-        //        selected = null;//do something about this
-        //    }
-        //    storageObject.CurrentClassID = selected;
-        //    storageObject.AddClassIdToFile(selected);
-        //}
-
-        //private void btnAddStudent_Click(object sender, EventArgs e)
-        //{
-        //    DetermineUserClassId();
-        //    string f = txtBxFName.Text;
-        //    string l = txtBxLName.Text;
-        //    bool ready = (f.Length > 0);//trying to prohibit empty strings
-        //    if (ready)
-        //    {
-        //        Student tempStu = new Student(f, l, storageObject.CurrentClassID);
-        //        storageObject.TempStudentObjectList.Add(tempStu);
-        //        storageObject.AddStudentToFile(tempStu);
-        //        lblConfirmAddStu.Text = "You've added " + f + " " + l + " to " + storageObject.CurrentClassID + "!";
-        //    }
-        //    txtBxFName.Text = "";
-        //    txtBxLName.Text = "";
-        //}
-        //figure this shit out up here you have two add student clicks!
-
-        //private void DisplayStudentsInRosterBox()
-        //{
-        //    lvRoster.Clear();
-        //    foreach (Student stu in storageObject.TempStudentObjectList)
-        //    {
-        //        if (stu.SectionID == storageObject.CurrentClassID)
-        //        {
-        //            if (stu.LastName == "/")
-        //            {
-        //                lvRoster.Items.Add(stu.FirstName);
-        //            }
-        //            else
-        //            {
-        //                lvRoster.Items.Add(stu.FirstName + " " + stu.LastName);
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void DisplayRosterBox()
-        //{
-        //    //if (selectClassButtonCounter == 0)
-        //    {
-
-        //        //storageObject.CreateStudentObjects();
-        //    }
-        //    //storageObject.CreateStudentObjects(storageObject.TempRosterList);
-        //    DisplayStudentsInRosterBox();
-        //}
-
-        //private void btnMMAddToExisting_Click(object sender, EventArgs e)
-        //{
-        //    //btnMMSelectExClass.Visible = false;
-        //    if (pnlMMSelectExClass.Visible == false)
-        //    {
-        //        DisplayExistingClasses();
-        //    }
-        //    pnlAddStudent.Visible = true;
-        //}
-
-        ///// <summary>
-        ///// Sets visibility of main split panel container to true.
-        ///// </summary>
-        //private void SPLIT_CONTAINER_CLASS_INFO_ON()
-        //{
-        //    if (scRosterDisplay.Visible == false)
-        //    {
-        //        scRosterDisplay.Visible = true;
-        //        pnlGenerateGroups.Visible = true;
-        //    }
-        //}
-        #endregion
-
     }
 }
 

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearningTrackerWindow));
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("2");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("3");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("4");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("5");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("6");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("7");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("8");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("9");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("2");
+            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("3");
+            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("4");
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("5");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("6");
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("7");
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("8");
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem("9");
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("10");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -110,6 +110,7 @@
             this.tsmiAddObjective = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGroups = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGroupByObj = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbxMac = new System.Windows.Forms.CheckBox();
             this.pnlGroups.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -306,7 +307,7 @@
             this.lbClasses.ItemHeight = 19;
             this.lbClasses.Location = new System.Drawing.Point(13, 23);
             this.lbClasses.Name = "lbClasses";
-            this.lbClasses.Size = new System.Drawing.Size(161, 61);
+            this.lbClasses.Size = new System.Drawing.Size(161, 42);
             this.lbClasses.TabIndex = 0;
             this.lbClasses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbClasses_KeyPress);
             // 
@@ -383,7 +384,7 @@
             // lvNot
             // 
             this.lvNot.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvNot.Location = new System.Drawing.Point(340, 30);
+            this.lvNot.Location = new System.Drawing.Point(336, 22);
             this.lvNot.Name = "lvNot";
             this.lvNot.Size = new System.Drawing.Size(146, 150);
             this.lvNot.TabIndex = 16;
@@ -393,7 +394,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 11);
+            this.label2.Location = new System.Drawing.Point(35, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 10;
@@ -402,7 +403,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(363, 10);
+            this.label6.Location = new System.Drawing.Point(359, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 17);
             this.label6.TabIndex = 15;
@@ -410,8 +411,11 @@
             // 
             // lvCompleted
             // 
+            this.lvCompleted.FullRowSelect = true;
             this.lvCompleted.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvCompleted.Location = new System.Drawing.Point(20, 30);
+            this.lvCompleted.HideSelection = false;
+            this.lvCompleted.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lvCompleted.Location = new System.Drawing.Point(12, 22);
             this.lvCompleted.Name = "lvCompleted";
             this.lvCompleted.Size = new System.Drawing.Size(146, 150);
             this.lvCompleted.TabIndex = 12;
@@ -421,7 +425,7 @@
             // lvPartial
             // 
             this.lvPartial.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvPartial.Location = new System.Drawing.Point(180, 30);
+            this.lvPartial.Location = new System.Drawing.Point(174, 22);
             this.lvPartial.Name = "lvPartial";
             this.lvPartial.Size = new System.Drawing.Size(146, 150);
             this.lvPartial.TabIndex = 14;
@@ -431,7 +435,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(192, 11);
+            this.label5.Location = new System.Drawing.Point(182, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 17);
             this.label5.TabIndex = 13;
@@ -500,7 +504,6 @@
             this.lvRoster.TabStop = false;
             this.lvRoster.UseCompatibleStateImageBehavior = false;
             this.lvRoster.View = System.Windows.Forms.View.SmallIcon;
-            this.lvRoster.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvRoster_ItemChecked);
             // 
             // btnPartial
             // 
@@ -540,6 +543,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbxMac);
             this.panel1.Controls.Add(this.lblFeedbackMessage);
             this.panel1.Controls.Add(this.pbLogo);
             this.panel1.Controls.Add(this.grpStuProgress);
@@ -849,25 +853,25 @@
             this.lvChapters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvChapters.CheckBoxes = true;
             this.lvChapters.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewItem10.StateImageIndex = 0;
-            listViewItem11.StateImageIndex = 0;
-            listViewItem12.StateImageIndex = 0;
-            listViewItem13.StateImageIndex = 0;
-            listViewItem14.StateImageIndex = 0;
-            listViewItem15.StateImageIndex = 0;
-            listViewItem16.StateImageIndex = 0;
-            listViewItem17.StateImageIndex = 0;
-            listViewItem18.StateImageIndex = 0;
+            listViewItem37.StateImageIndex = 0;
+            listViewItem38.StateImageIndex = 0;
+            listViewItem39.StateImageIndex = 0;
+            listViewItem40.StateImageIndex = 0;
+            listViewItem41.StateImageIndex = 0;
+            listViewItem42.StateImageIndex = 0;
+            listViewItem43.StateImageIndex = 0;
+            listViewItem44.StateImageIndex = 0;
+            listViewItem45.StateImageIndex = 0;
             this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18});
+            listViewItem37,
+            listViewItem38,
+            listViewItem39,
+            listViewItem40,
+            listViewItem41,
+            listViewItem42,
+            listViewItem43,
+            listViewItem44,
+            listViewItem45});
             this.lvChapters.Location = new System.Drawing.Point(407, 29);
             this.lvChapters.Name = "lvChapters";
             this.lvChapters.Size = new System.Drawing.Size(62, 177);
@@ -925,7 +929,6 @@
             this.msMainMenu.Stretch = false;
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
-            this.msMainMenu.MouseLeave += new System.EventHandler(this.msMainMenu_MouseLeave);
             // 
             // tsmiClass
             // 
@@ -1020,6 +1023,24 @@
             this.tsmiGroupByObj.Size = new System.Drawing.Size(287, 22);
             this.tsmiGroupByObj.Text = "Currently Selected Learning Objective(s)";
             this.tsmiGroupByObj.Click += new System.EventHandler(this.tsmiGroupByObj_Click);
+            // 
+            // cbxMac
+            // 
+            this.cbxMac.AutoSize = true;
+            this.cbxMac.Checked = true;
+            this.cbxMac.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxMac.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cbxMac.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.cbxMac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.cbxMac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxMac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxMac.Location = new System.Drawing.Point(16, 686);
+            this.cbxMac.Name = "cbxMac";
+            this.cbxMac.Size = new System.Drawing.Size(102, 17);
+            this.cbxMac.TabIndex = 37;
+            this.cbxMac.Text = "Optimize for Mac";
+            this.cbxMac.UseVisualStyleBackColor = true;
+            this.cbxMac.CheckedChanged += new System.EventHandler(this.cbxMac_CheckedChanged);
             // 
             // LearningTrackerWindow
             // 
@@ -1137,6 +1158,7 @@
         private System.Windows.Forms.Button btnUnSelectAllObj;
         private System.Windows.Forms.Button btnSelectAllObj;
         private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.CheckBox cbxMac;
     }
 }
 
