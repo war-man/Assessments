@@ -1032,7 +1032,7 @@ namespace Assessments
             }
         }
         #endregion
-
+         
         #region Hide Panels
         //Hides feedback message label when buttons are pressed or boxes are entered
         private void grpSelectClass_Enter(object sender, EventArgs e)
@@ -1061,11 +1061,11 @@ namespace Assessments
         }
         private void pnlGenerateGroups_Enter(object sender, EventArgs e)
         {
-            lblFeedbackMessage.Visible = false;
+            //lblFeedbackMessage.Visible = false;
         }
         private void pnlGroups_MouseEnter(object sender, EventArgs e)
         {
-            lblFeedbackMessage.Visible = false;
+            //lblFeedbackMessage.Visible = false;
         }
 
         /// <summary>
@@ -1104,19 +1104,19 @@ namespace Assessments
 
         bool obj1Drop = false, obj2Drop = false, obj3Drop = false, obj4Drop = false;
         
-        private bool NO_CURSOR_IN_MENU()
-        {
-            bool returnVal;
-            if (obj1Drop == false && obj2Drop == false && obj3Drop == false && obj4Drop == false)
-            {
-                returnVal = true;
-            }
-            else
-            {
-                returnVal = false;
-            }
-            return returnVal;
-        }
+        //private bool NO_CURSOR_IN_MENU()
+        //{
+        //    bool returnVal;
+        //    if (obj1Drop == false && obj2Drop == false && obj3Drop == false && obj4Drop == false)
+        //    {
+        //        returnVal = true;
+        //    }
+        //    else
+        //    {
+        //        returnVal = false;
+        //    }
+        //    return returnVal;
+        //}
 
         private void tsmiLearningObjectives_MouseEnter(object sender, EventArgs e)
         {
@@ -1132,64 +1132,6 @@ namespace Assessments
             //tsmiLearningObjectives.HideDropDown();
         }
 
-        private void tsmiLearningObjectives_DropDownOpening(object sender, EventArgs e)
-        {
-            //obj1Drop = true;
-        }
-
-        private void tsmiLearningObjectives_MouseLeave(object sender, EventArgs e)
-        {
-                //if (obj1Drop == true && obj2Drop == false)
-                //{
-                //    tsmiLearningObjectives.HideDropDown();
-                //}
-        }
-
-        private void tsmiAddObjective_MouseEnter(object sender, EventArgs e)
-        {
-            //obj2Drop = true;
-            //if (NO_CURSOR_IN_MENU())
-            //{
-            //    tsmiLearningObjectives.HideDropDown();
-            //}
-        }
-
-        private void tsmiAddObjective_MouseLeave(object sender, EventArgs e)
-        {
-            //if (NO_CURSOR_IN_MENU())
-            //{
-            //    tsmiLearningObjectives.HideDropDown();
-            //}
-            //obj2Drop = false;
-        }
-
-        private void tsmiGroups_MouseLeave(object sender, EventArgs e)
-        {
-            //if (NO_CURSOR_IN_MENU())
-            //{
-            //    tsmiLearningObjectives.HideDropDown();
-            //}
-            //obj3Drop = false;
-        }
-
-
-        private void tsmiGroups_DropDownOpening(object sender, EventArgs e)
-        {
-            //obj4Drop = true;
-            //if (NO_CURSOR_IN_MENU())
-            //{
-            //    tsmiLearningObjectives.HideDropDown();
-            //}
-        }
-
-        private void tsmiGroupByObj_MouseLeave(object sender, EventArgs e)
-        {
-            //if (NO_CURSOR_IN_MENU())
-            //{
-            //    tsmiLearningObjectives.HideDropDown();
-            //}
-            //obj4Drop = false;
-        }
 
         /// <summary>
         /// Executes when mouse enters "Group Students By" menu item box.
@@ -1255,18 +1197,6 @@ namespace Assessments
                 lblAddStudentConfirm.Text = "";
             }
         }
-
-        //private void lvRoster_ItemChecked(object sender, ItemCheckedEventArgs e)
-        //{
-        //    lblUpdateComplete.Visible = false;
-        //    lblPartialUpdate.Visible = false;
-        //}
-
-        //private void lvObjectives_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    lblUpdateComplete.Visible = false;
-        //    lblPartialUpdate.Visible = false;
-        //}
         #endregion
         
         #region Enter Key Handlers

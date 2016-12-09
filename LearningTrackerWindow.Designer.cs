@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearningTrackerWindow));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("2");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("3");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("4");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("5");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("6");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("7");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("8");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("9");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("2");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("3");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("4");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("5");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("6");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("7");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("8");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("9");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("10");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -76,13 +76,13 @@
             this.lblObjectiveList = new System.Windows.Forms.Label();
             this.lblRosterClassHead = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFeedbackMessage = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.grpStuProgress = new System.Windows.Forms.GroupBox();
             this.lbStuProgPart = new System.Windows.Forms.ListBox();
             this.lbStuProgCom = new System.Windows.Forms.ListBox();
             this.lblStuProgPart = new System.Windows.Forms.Label();
             this.lblStuProgCom = new System.Windows.Forms.Label();
-            this.lblFeedbackMessage = new System.Windows.Forms.Label();
             this.pnlGenerateGroups = new System.Windows.Forms.Panel();
             this.grpLearnObj = new System.Windows.Forms.GroupBox();
             this.grpAddStudent = new System.Windows.Forms.GroupBox();
@@ -306,7 +306,7 @@
             this.lbClasses.ItemHeight = 19;
             this.lbClasses.Location = new System.Drawing.Point(13, 23);
             this.lbClasses.Name = "lbClasses";
-            this.lbClasses.Size = new System.Drawing.Size(161, 42);
+            this.lbClasses.Size = new System.Drawing.Size(161, 61);
             this.lbClasses.TabIndex = 0;
             this.lbClasses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbClasses_KeyPress);
             // 
@@ -540,9 +540,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblFeedbackMessage);
             this.panel1.Controls.Add(this.pbLogo);
             this.panel1.Controls.Add(this.grpStuProgress);
-            this.panel1.Controls.Add(this.lblFeedbackMessage);
             this.panel1.Controls.Add(this.pnlGenerateGroups);
             this.panel1.Controls.Add(this.grpLearnObj);
             this.panel1.Controls.Add(this.grpAddStudent);
@@ -555,6 +555,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1173, 726);
             this.panel1.TabIndex = 16;
+            // 
+            // lblFeedbackMessage
+            // 
+            this.lblFeedbackMessage.AutoEllipsis = true;
+            this.lblFeedbackMessage.AutoSize = true;
+            this.lblFeedbackMessage.BackColor = System.Drawing.Color.White;
+            this.lblFeedbackMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFeedbackMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFeedbackMessage.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblFeedbackMessage.Location = new System.Drawing.Point(391, 7);
+            this.lblFeedbackMessage.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFeedbackMessage.Name = "lblFeedbackMessage";
+            this.lblFeedbackMessage.Size = new System.Drawing.Size(167, 27);
+            this.lblFeedbackMessage.TabIndex = 33;
+            this.lblFeedbackMessage.Text = "Error Message Label";
+            this.lblFeedbackMessage.UseCompatibleTextRendering = true;
+            this.lblFeedbackMessage.Visible = false;
             // 
             // pbLogo
             // 
@@ -627,24 +645,6 @@
             this.lblStuProgCom.Size = new System.Drawing.Size(68, 15);
             this.lblStuProgCom.TabIndex = 0;
             this.lblStuProgCom.Text = "Complete";
-            // 
-            // lblFeedbackMessage
-            // 
-            this.lblFeedbackMessage.AutoEllipsis = true;
-            this.lblFeedbackMessage.AutoSize = true;
-            this.lblFeedbackMessage.BackColor = System.Drawing.Color.White;
-            this.lblFeedbackMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFeedbackMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFeedbackMessage.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeedbackMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedbackMessage.Location = new System.Drawing.Point(391, 7);
-            this.lblFeedbackMessage.Margin = new System.Windows.Forms.Padding(0);
-            this.lblFeedbackMessage.Name = "lblFeedbackMessage";
-            this.lblFeedbackMessage.Size = new System.Drawing.Size(167, 27);
-            this.lblFeedbackMessage.TabIndex = 33;
-            this.lblFeedbackMessage.Text = "Error Message Label";
-            this.lblFeedbackMessage.UseCompatibleTextRendering = true;
-            this.lblFeedbackMessage.Visible = false;
             // 
             // pnlGenerateGroups
             // 
@@ -849,25 +849,25 @@
             this.lvChapters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvChapters.CheckBoxes = true;
             this.lvChapters.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.StateImageIndex = 0;
             this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
             this.lvChapters.Location = new System.Drawing.Point(407, 29);
             this.lvChapters.Name = "lvChapters";
             this.lvChapters.Size = new System.Drawing.Size(62, 177);
@@ -995,9 +995,7 @@
             this.tsmiLearningObjectives.Name = "tsmiLearningObjectives";
             this.tsmiLearningObjectives.Size = new System.Drawing.Size(145, 24);
             this.tsmiLearningObjectives.Text = "Learning Objective";
-            this.tsmiLearningObjectives.DropDownOpening += new System.EventHandler(this.tsmiLearningObjectives_DropDownOpening);
             this.tsmiLearningObjectives.MouseEnter += new System.EventHandler(this.tsmiLearningObjectives_MouseEnter);
-            this.tsmiLearningObjectives.MouseLeave += new System.EventHandler(this.tsmiLearningObjectives_MouseLeave);
             // 
             // tsmiAddObjective
             // 
@@ -1005,8 +1003,6 @@
             this.tsmiAddObjective.Size = new System.Drawing.Size(200, 24);
             this.tsmiAddObjective.Text = "Create New";
             this.tsmiAddObjective.Click += new System.EventHandler(this.tsmiAddObjective_Click);
-            this.tsmiAddObjective.MouseEnter += new System.EventHandler(this.tsmiAddObjective_MouseEnter);
-            this.tsmiAddObjective.MouseLeave += new System.EventHandler(this.tsmiAddObjective_MouseLeave);
             // 
             // tsmiGroups
             // 
@@ -1015,9 +1011,7 @@
             this.tsmiGroups.Name = "tsmiGroups";
             this.tsmiGroups.Size = new System.Drawing.Size(200, 24);
             this.tsmiGroups.Text = "Group Students By";
-            this.tsmiGroups.DropDownOpening += new System.EventHandler(this.tsmiGroups_DropDownOpening);
             this.tsmiGroups.MouseEnter += new System.EventHandler(this.tsmiGroups_MouseEnter);
-            this.tsmiGroups.MouseLeave += new System.EventHandler(this.tsmiGroups_MouseLeave);
             // 
             // tsmiGroupByObj
             // 
@@ -1026,7 +1020,6 @@
             this.tsmiGroupByObj.Size = new System.Drawing.Size(287, 22);
             this.tsmiGroupByObj.Text = "Currently Selected Learning Objective(s)";
             this.tsmiGroupByObj.Click += new System.EventHandler(this.tsmiGroupByObj_Click);
-            this.tsmiGroupByObj.MouseLeave += new System.EventHandler(this.tsmiGroupByObj_MouseLeave);
             // 
             // LearningTrackerWindow
             // 
