@@ -1041,6 +1041,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMainMenu;
             this.Name = "LearningTrackerWindow";
+            this.ShowInTaskbar = false;
             this.Text = "First Grade";
             this.pnlGroups.ResumeLayout(false);
             this.pnlGroups.PerformLayout();

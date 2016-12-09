@@ -8,11 +8,10 @@ W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.e
 W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.pdb
 W:\Cleveland Codes\Visual Studio\Assessments\Assessments\obj\Debug\Assessments.csprojResolveAssemblyReference.cache
 W:\GitHub\Assessments\Assessments\bin\Debug\Assessments.exe.config
-W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.exe
-W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.pdb
 W:\GitHub\Assessments\Assessments\bin\Debug\Assessments.exe
 W:\GitHub\Assessments\Assessments\bin\Debug\Assessments.pdb
-W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.csprojResolveAssemblyReference.cache
 W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.LearningTrackerWindow.resources
 W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.Properties.Resources.resources
 W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.csproj.GenerateResource.Cache
+W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.exe
+W:\GitHub\Assessments\Assessments\obj\Debug\Assessments.pdb
