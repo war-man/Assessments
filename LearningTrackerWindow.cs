@@ -144,7 +144,7 @@ namespace Assessments
         //Select Class "Go" button click
         private void btnSelectClass_Click(object sender, EventArgs e)
         {
-            lblFeedbackMessage.Visible = false;
+            lblFeedbackMessage.Visible = true;
             if (lbClasses.SelectedIndex != -1) //if it is == -1 that means nothing in the box is selected and it won't do anything!
             {
                 ClearAllGroupBoxes();
@@ -962,7 +962,9 @@ namespace Assessments
                 {
                     file.WriteLine(macSbString);
                 }
-                lblFeedbackMessage.Text = "Group data has been copied to the GroupsClipboard.txt file.";
+                //lblFeedbackMessage.BackColor = Color.LimeGreen;
+                //lblFeedbackMessage.ForeColor = Color.Black;
+                lblFeedbackMessage.Text = "Please open the GroupsClipboard.txt file to see printed group data.";
                 lblFeedbackMessage.Visible = true;//message just to confirm to user that the material was copied.
             }
         }
@@ -1110,10 +1112,6 @@ namespace Assessments
          
         #region Hide Panels
         //Hides feedback message label when buttons are pressed or boxes are entered
-        private void grpSelectClass_Enter(object sender, EventArgs e)
-        {
-            lblFeedbackMessage.Visible = false;
-        }
         private void grpAddClass_Enter(object sender, EventArgs e)
         {
             lblFeedbackMessage.Visible = false;
@@ -1133,14 +1131,6 @@ namespace Assessments
         private void scRosterDisplay_Panel2_Enter(object sender, EventArgs e)
         {
             lblFeedbackMessage.Visible = false;
-        }
-        private void pnlGenerateGroups_Enter(object sender, EventArgs e)
-        {
-            //lblFeedbackMessage.Visible = false;
-        }
-        private void pnlGroups_MouseEnter(object sender, EventArgs e)
-        {
-            //lblFeedbackMessage.Visible = false;
         }
 
         /// <summary>
@@ -1355,6 +1345,8 @@ namespace Assessments
                 btnSelectClass_Click(sender, e);
             }
         }
+
+
 
         /// <summary>
         /// Determines if Enter key was pressed by user

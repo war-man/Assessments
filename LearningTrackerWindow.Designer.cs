@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearningTrackerWindow));
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem("2");
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem("3");
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem("4");
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem("5");
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem("6");
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem("7");
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem("8");
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem("9");
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("2");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("3");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("4");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("5");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("6");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("7");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("8");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("9");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("10");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -76,6 +76,7 @@
             this.lblObjectiveList = new System.Windows.Forms.Label();
             this.lblRosterClassHead = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxMac = new System.Windows.Forms.CheckBox();
             this.lblFeedbackMessage = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.grpStuProgress = new System.Windows.Forms.GroupBox();
@@ -110,7 +111,6 @@
             this.tsmiAddObjective = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGroups = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGroupByObj = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbxMac = new System.Windows.Forms.CheckBox();
             this.pnlGroups.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -315,7 +315,7 @@
             // 
             this.btnSelectClass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectClass.Location = new System.Drawing.Point(13, 87);
+            this.btnSelectClass.Location = new System.Drawing.Point(11, 75);
             this.btnSelectClass.Name = "btnSelectClass";
             this.btnSelectClass.Size = new System.Drawing.Size(61, 37);
             this.btnSelectClass.TabIndex = 1;
@@ -328,7 +328,7 @@
             // 
             this.lblSortGroupList.AutoSize = true;
             this.lblSortGroupList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortGroupList.Location = new System.Drawing.Point(9, 100);
+            this.lblSortGroupList.Location = new System.Drawing.Point(11, 93);
             this.lblSortGroupList.Name = "lblSortGroupList";
             this.lblSortGroupList.Size = new System.Drawing.Size(24, 17);
             this.lblSortGroupList.TabIndex = 19;
@@ -340,7 +340,7 @@
             this.lblGenerateGrpDesc.AutoSize = true;
             this.lblGenerateGrpDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerateGrpDesc.ForeColor = System.Drawing.Color.Teal;
-            this.lblGenerateGrpDesc.Location = new System.Drawing.Point(9, 46);
+            this.lblGenerateGrpDesc.Location = new System.Drawing.Point(11, 39);
             this.lblGenerateGrpDesc.Name = "lblGenerateGrpDesc";
             this.lblGenerateGrpDesc.Size = new System.Drawing.Size(125, 45);
             this.lblGenerateGrpDesc.TabIndex = 17;
@@ -357,12 +357,11 @@
             this.pnlGroups.Controls.Add(this.label5);
             this.pnlGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGroups.ForeColor = System.Drawing.Color.Teal;
-            this.pnlGroups.Location = new System.Drawing.Point(613, 500);
+            this.pnlGroups.Location = new System.Drawing.Point(617, 477);
             this.pnlGroups.Name = "pnlGroups";
-            this.pnlGroups.Size = new System.Drawing.Size(507, 223);
+            this.pnlGroups.Size = new System.Drawing.Size(507, 233);
             this.pnlGroups.TabIndex = 16;
             this.pnlGroups.Visible = false;
-            this.pnlGroups.MouseEnter += new System.EventHandler(this.pnlGroups_MouseEnter);
             // 
             // btnCopyAll
             // 
@@ -372,12 +371,12 @@
             this.btnCopyAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btnCopyAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCopyAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopyAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCopyAll.Location = new System.Drawing.Point(123, 186);
+            this.btnCopyAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopyAll.Location = new System.Drawing.Point(118, 178);
             this.btnCopyAll.Name = "btnCopyAll";
             this.btnCopyAll.Size = new System.Drawing.Size(259, 29);
             this.btnCopyAll.TabIndex = 20;
-            this.btnCopyAll.Text = "Copy Groups to Clipboard";
+            this.btnCopyAll.Text = "Copy Groups";
             this.btnCopyAll.UseVisualStyleBackColor = true;
             this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
             // 
@@ -394,20 +393,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 2);
+            this.label2.Location = new System.Drawing.Point(43, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Has Completed";
+            this.label2.Text = "Complete";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(359, 2);
+            this.label6.Location = new System.Drawing.Point(375, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
+            this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Not Completed";
+            this.label6.Text = "Incomplete";
             // 
             // lvCompleted
             // 
@@ -435,11 +434,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 2);
+            this.label5.Location = new System.Drawing.Point(211, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 17);
+            this.label5.Size = new System.Drawing.Size(58, 17);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Partially Completed";
+            this.label5.Text = "Partially";
             // 
             // btnGoGroups
             // 
@@ -447,7 +446,7 @@
             this.btnGoGroups.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoGroups.ForeColor = System.Drawing.Color.Teal;
-            this.btnGoGroups.Location = new System.Drawing.Point(12, 10);
+            this.btnGoGroups.Location = new System.Drawing.Point(14, 3);
             this.btnGoGroups.Name = "btnGoGroups";
             this.btnGoGroups.Size = new System.Drawing.Size(133, 33);
             this.btnGoGroups.TabIndex = 11;
@@ -459,7 +458,7 @@
             // 
             this.lblUpdateComplete.AutoSize = true;
             this.lblUpdateComplete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateComplete.Location = new System.Drawing.Point(310, 290);
+            this.lblUpdateComplete.Location = new System.Drawing.Point(310, 230);
             this.lblUpdateComplete.Name = "lblUpdateComplete";
             this.lblUpdateComplete.Size = new System.Drawing.Size(32, 17);
             this.lblUpdateComplete.TabIndex = 8;
@@ -476,9 +475,9 @@
             this.lvObjectives.Font = new System.Drawing.Font("Times New Roman", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvObjectives.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvObjectives.LabelWrap = false;
-            this.lvObjectives.Location = new System.Drawing.Point(3, 29);
+            this.lvObjectives.Location = new System.Drawing.Point(3, 21);
             this.lvObjectives.Name = "lvObjectives";
-            this.lvObjectives.Size = new System.Drawing.Size(301, 395);
+            this.lvObjectives.Size = new System.Drawing.Size(301, 312);
             this.lvObjectives.TabIndex = 7;
             this.lvObjectives.UseCompatibleStateImageBehavior = false;
             this.lvObjectives.View = System.Windows.Forms.View.SmallIcon;
@@ -497,9 +496,9 @@
             // 
             this.lvRoster.CheckBoxes = true;
             this.lvRoster.Font = new System.Drawing.Font("Times New Roman", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvRoster.Location = new System.Drawing.Point(3, 29);
+            this.lvRoster.Location = new System.Drawing.Point(3, 21);
             this.lvRoster.Name = "lvRoster";
-            this.lvRoster.Size = new System.Drawing.Size(172, 348);
+            this.lvRoster.Size = new System.Drawing.Size(172, 312);
             this.lvRoster.TabIndex = 6;
             this.lvRoster.TabStop = false;
             this.lvRoster.UseCompatibleStateImageBehavior = false;
@@ -513,7 +512,7 @@
             this.btnPartial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPartial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPartial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnPartial.Location = new System.Drawing.Point(407, 228);
+            this.btnPartial.Location = new System.Drawing.Point(407, 178);
             this.btnPartial.Name = "btnPartial";
             this.btnPartial.Size = new System.Drawing.Size(66, 49);
             this.btnPartial.TabIndex = 5;
@@ -524,20 +523,20 @@
             // lblObjectiveList
             // 
             this.lblObjectiveList.AutoSize = true;
-            this.lblObjectiveList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjectiveList.Location = new System.Drawing.Point(3, 8);
+            this.lblObjectiveList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObjectiveList.Location = new System.Drawing.Point(3, 3);
             this.lblObjectiveList.Name = "lblObjectiveList";
-            this.lblObjectiveList.Size = new System.Drawing.Size(137, 18);
+            this.lblObjectiveList.Size = new System.Drawing.Size(115, 15);
             this.lblObjectiveList.TabIndex = 3;
             this.lblObjectiveList.Text = "Learning Objectives";
             // 
             // lblRosterClassHead
             // 
             this.lblRosterClassHead.AutoSize = true;
-            this.lblRosterClassHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRosterClassHead.Location = new System.Drawing.Point(6, 8);
+            this.lblRosterClassHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRosterClassHead.Location = new System.Drawing.Point(3, 3);
             this.lblRosterClassHead.Name = "lblRosterClassHead";
-            this.lblRosterClassHead.Size = new System.Drawing.Size(66, 18);
+            this.lblRosterClassHead.Size = new System.Drawing.Size(55, 15);
             this.lblRosterClassHead.TabIndex = 2;
             this.lblRosterClassHead.Text = "Students";
             // 
@@ -555,10 +554,28 @@
             this.panel1.Controls.Add(this.grpSelectClass);
             this.panel1.Controls.Add(this.pnlGroups);
             this.panel1.Controls.Add(this.msMainMenu);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1173, 726);
+            this.panel1.Size = new System.Drawing.Size(1172, 714);
             this.panel1.TabIndex = 16;
+            // 
+            // cbxMac
+            // 
+            this.cbxMac.AutoSize = true;
+            this.cbxMac.Checked = true;
+            this.cbxMac.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxMac.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cbxMac.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.cbxMac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.cbxMac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxMac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxMac.Location = new System.Drawing.Point(16, 678);
+            this.cbxMac.Name = "cbxMac";
+            this.cbxMac.Size = new System.Drawing.Size(102, 17);
+            this.cbxMac.TabIndex = 37;
+            this.cbxMac.Text = "Optimize for Mac";
+            this.cbxMac.UseVisualStyleBackColor = true;
+            this.cbxMac.CheckedChanged += new System.EventHandler(this.cbxMac_CheckedChanged);
             // 
             // lblFeedbackMessage
             // 
@@ -567,16 +584,15 @@
             this.lblFeedbackMessage.BackColor = System.Drawing.Color.White;
             this.lblFeedbackMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFeedbackMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFeedbackMessage.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFeedbackMessage.Font = new System.Drawing.Font("Times New Roman", 11.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblFeedbackMessage.Location = new System.Drawing.Point(391, 7);
+            this.lblFeedbackMessage.Location = new System.Drawing.Point(442, 24);
             this.lblFeedbackMessage.Margin = new System.Windows.Forms.Padding(0);
             this.lblFeedbackMessage.Name = "lblFeedbackMessage";
-            this.lblFeedbackMessage.Size = new System.Drawing.Size(167, 27);
+            this.lblFeedbackMessage.Size = new System.Drawing.Size(75, 25);
             this.lblFeedbackMessage.TabIndex = 33;
-            this.lblFeedbackMessage.Text = "Error Message Label";
+            this.lblFeedbackMessage.Text = "Welcome!";
             this.lblFeedbackMessage.UseCompatibleTextRendering = true;
-            this.lblFeedbackMessage.Visible = false;
             // 
             // pbLogo
             // 
@@ -594,11 +610,11 @@
             this.grpStuProgress.Controls.Add(this.lbStuProgCom);
             this.grpStuProgress.Controls.Add(this.lblStuProgPart);
             this.grpStuProgress.Controls.Add(this.lblStuProgCom);
-            this.grpStuProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpStuProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpStuProgress.ForeColor = System.Drawing.Color.Olive;
-            this.grpStuProgress.Location = new System.Drawing.Point(250, 499);
+            this.grpStuProgress.Location = new System.Drawing.Point(247, 488);
             this.grpStuProgress.Name = "grpStuProgress";
-            this.grpStuProgress.Size = new System.Drawing.Size(175, 212);
+            this.grpStuProgress.Size = new System.Drawing.Size(175, 184);
             this.grpStuProgress.TabIndex = 34;
             this.grpStuProgress.TabStop = false;
             this.grpStuProgress.Text = "Student Progress";
@@ -614,7 +630,7 @@
             this.lbStuProgPart.Location = new System.Drawing.Point(87, 45);
             this.lbStuProgPart.Name = "lbStuProgPart";
             this.lbStuProgPart.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbStuProgPart.Size = new System.Drawing.Size(70, 156);
+            this.lbStuProgPart.Size = new System.Drawing.Size(70, 118);
             this.lbStuProgPart.TabIndex = 4;
             // 
             // lbStuProgCom
@@ -627,14 +643,14 @@
             this.lbStuProgCom.Location = new System.Drawing.Point(9, 45);
             this.lbStuProgCom.Name = "lbStuProgCom";
             this.lbStuProgCom.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbStuProgCom.Size = new System.Drawing.Size(70, 156);
+            this.lbStuProgCom.Size = new System.Drawing.Size(70, 118);
             this.lbStuProgCom.TabIndex = 3;
             // 
             // lblStuProgPart
             // 
             this.lblStuProgPart.AutoSize = true;
             this.lblStuProgPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStuProgPart.Location = new System.Drawing.Point(95, 27);
+            this.lblStuProgPart.Location = new System.Drawing.Point(97, 21);
             this.lblStuProgPart.Name = "lblStuProgPart";
             this.lblStuProgPart.Size = new System.Drawing.Size(49, 15);
             this.lblStuProgPart.TabIndex = 1;
@@ -644,7 +660,7 @@
             // 
             this.lblStuProgCom.AutoSize = true;
             this.lblStuProgCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStuProgCom.Location = new System.Drawing.Point(11, 27);
+            this.lblStuProgCom.Location = new System.Drawing.Point(11, 21);
             this.lblStuProgCom.Name = "lblStuProgCom";
             this.lblStuProgCom.Size = new System.Drawing.Size(68, 15);
             this.lblStuProgCom.TabIndex = 0;
@@ -655,12 +671,11 @@
             this.pnlGenerateGroups.Controls.Add(this.btnGoGroups);
             this.pnlGenerateGroups.Controls.Add(this.lblSortGroupList);
             this.pnlGenerateGroups.Controls.Add(this.lblGenerateGrpDesc);
-            this.pnlGenerateGroups.Location = new System.Drawing.Point(454, 502);
+            this.pnlGenerateGroups.Location = new System.Drawing.Point(428, 477);
             this.pnlGenerateGroups.Name = "pnlGenerateGroups";
-            this.pnlGenerateGroups.Size = new System.Drawing.Size(153, 221);
+            this.pnlGenerateGroups.Size = new System.Drawing.Size(167, 233);
             this.pnlGenerateGroups.TabIndex = 32;
             this.pnlGenerateGroups.Visible = false;
-            this.pnlGenerateGroups.Enter += new System.EventHandler(this.pnlGenerateGroups_Enter);
             // 
             // grpLearnObj
             // 
@@ -670,9 +685,9 @@
             this.grpLearnObj.Controls.Add(this.txtObjDesc);
             this.grpLearnObj.Controls.Add(this.lblAddObj1);
             this.grpLearnObj.Controls.Add(this.lblAddObj2);
-            this.grpLearnObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpLearnObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpLearnObj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.grpLearnObj.Location = new System.Drawing.Point(930, 102);
+            this.grpLearnObj.Location = new System.Drawing.Point(921, 108);
             this.grpLearnObj.Name = "grpLearnObj";
             this.grpLearnObj.Size = new System.Drawing.Size(235, 271);
             this.grpLearnObj.TabIndex = 31;
@@ -690,11 +705,11 @@
             this.grpAddStudent.Controls.Add(this.txtFName);
             this.grpAddStudent.Controls.Add(this.btnAddStudent);
             this.grpAddStudent.Controls.Add(this.txtLName);
-            this.grpAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAddStudent.ForeColor = System.Drawing.Color.Maroon;
-            this.grpAddStudent.Location = new System.Drawing.Point(16, 456);
+            this.grpAddStudent.Location = new System.Drawing.Point(16, 447);
             this.grpAddStudent.Name = "grpAddStudent";
-            this.grpAddStudent.Size = new System.Drawing.Size(200, 230);
+            this.grpAddStudent.Size = new System.Drawing.Size(200, 225);
             this.grpAddStudent.TabIndex = 30;
             this.grpAddStudent.TabStop = false;
             this.grpAddStudent.Text = "Create New Student";
@@ -706,11 +721,11 @@
             this.grpAddClass.Controls.Add(this.btnAddClass);
             this.grpAddClass.Controls.Add(this.lblAddClass);
             this.grpAddClass.Controls.Add(this.txtAddClass);
-            this.grpAddClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.grpAddClass.Location = new System.Drawing.Point(16, 317);
+            this.grpAddClass.Location = new System.Drawing.Point(16, 306);
             this.grpAddClass.Name = "grpAddClass";
-            this.grpAddClass.Size = new System.Drawing.Size(219, 156);
+            this.grpAddClass.Size = new System.Drawing.Size(219, 133);
             this.grpAddClass.TabIndex = 29;
             this.grpAddClass.TabStop = false;
             this.grpAddClass.Text = "Create New Class";
@@ -719,7 +734,7 @@
             // 
             // scRosterDisplay
             // 
-            this.scRosterDisplay.Location = new System.Drawing.Point(250, 37);
+            this.scRosterDisplay.Location = new System.Drawing.Point(241, 58);
             this.scRosterDisplay.Name = "scRosterDisplay";
             // 
             // scRosterDisplay.Panel1
@@ -744,7 +759,7 @@
             this.scRosterDisplay.Panel2.Controls.Add(this.lblUpdateComplete);
             this.scRosterDisplay.Panel2.Controls.Add(this.btnPartial);
             this.scRosterDisplay.Panel2.Enter += new System.EventHandler(this.scRosterDisplay_Panel2_Enter);
-            this.scRosterDisplay.Size = new System.Drawing.Size(674, 456);
+            this.scRosterDisplay.Size = new System.Drawing.Size(674, 415);
             this.scRosterDisplay.SplitterDistance = 194;
             this.scRosterDisplay.TabIndex = 22;
             this.scRosterDisplay.Visible = false;
@@ -754,7 +769,7 @@
             this.btnStuAchieve.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStuAchieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStuAchieve.ForeColor = System.Drawing.Color.Olive;
-            this.btnStuAchieve.Location = new System.Drawing.Point(6, 428);
+            this.btnStuAchieve.Location = new System.Drawing.Point(9, 386);
             this.btnStuAchieve.Name = "btnStuAchieve";
             this.btnStuAchieve.Size = new System.Drawing.Size(169, 25);
             this.btnStuAchieve.TabIndex = 9;
@@ -767,7 +782,7 @@
             this.btnUnselectStudents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnselectStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnselectStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnUnselectStudents.Location = new System.Drawing.Point(87, 383);
+            this.btnUnselectStudents.Location = new System.Drawing.Point(86, 339);
             this.btnUnselectStudents.Name = "btnUnselectStudents";
             this.btnUnselectStudents.Size = new System.Drawing.Size(89, 39);
             this.btnUnselectStudents.TabIndex = 8;
@@ -780,7 +795,7 @@
             this.btnSelectAllStudents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectAllStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectAllStudents.ForeColor = System.Drawing.Color.Red;
-            this.btnSelectAllStudents.Location = new System.Drawing.Point(5, 383);
+            this.btnSelectAllStudents.Location = new System.Drawing.Point(9, 339);
             this.btnSelectAllStudents.Name = "btnSelectAllStudents";
             this.btnSelectAllStudents.Size = new System.Drawing.Size(74, 39);
             this.btnSelectAllStudents.TabIndex = 7;
@@ -796,7 +811,7 @@
             this.btnComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplete.ForeColor = System.Drawing.Color.Green;
-            this.btnComplete.Location = new System.Drawing.Point(308, 227);
+            this.btnComplete.Location = new System.Drawing.Point(308, 178);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(93, 49);
             this.btnComplete.TabIndex = 19;
@@ -809,7 +824,7 @@
             this.btnUnSelectAllObj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnSelectAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnSelectAllObj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnUnSelectAllObj.Location = new System.Drawing.Point(150, 430);
+            this.btnUnSelectAllObj.Location = new System.Drawing.Point(84, 339);
             this.btnUnSelectAllObj.Name = "btnUnSelectAllObj";
             this.btnUnSelectAllObj.Size = new System.Drawing.Size(92, 23);
             this.btnUnSelectAllObj.TabIndex = 18;
@@ -822,7 +837,7 @@
             this.btnSelectAllObj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectAllObj.ForeColor = System.Drawing.Color.Red;
-            this.btnSelectAllObj.Location = new System.Drawing.Point(52, 430);
+            this.btnSelectAllObj.Location = new System.Drawing.Point(3, 339);
             this.btnSelectAllObj.Name = "btnSelectAllObj";
             this.btnSelectAllObj.Size = new System.Drawing.Size(75, 23);
             this.btnSelectAllObj.TabIndex = 17;
@@ -837,7 +852,7 @@
             this.btnShowAllObj.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnShowAllObj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnShowAllObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAllObj.Location = new System.Drawing.Point(308, 29);
+            this.btnShowAllObj.Location = new System.Drawing.Point(308, 21);
             this.btnShowAllObj.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowAllObj.Name = "btnShowAllObj";
             this.btnShowAllObj.Size = new System.Drawing.Size(50, 45);
@@ -853,28 +868,28 @@
             this.lvChapters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvChapters.CheckBoxes = true;
             this.lvChapters.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewItem46.StateImageIndex = 0;
-            listViewItem47.StateImageIndex = 0;
-            listViewItem48.StateImageIndex = 0;
-            listViewItem49.StateImageIndex = 0;
-            listViewItem50.StateImageIndex = 0;
-            listViewItem51.StateImageIndex = 0;
-            listViewItem52.StateImageIndex = 0;
-            listViewItem53.StateImageIndex = 0;
-            listViewItem54.StateImageIndex = 0;
+            listViewItem19.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.StateImageIndex = 0;
+            listViewItem24.StateImageIndex = 0;
+            listViewItem25.StateImageIndex = 0;
+            listViewItem26.StateImageIndex = 0;
+            listViewItem27.StateImageIndex = 0;
             this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem46,
-            listViewItem47,
-            listViewItem48,
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54});
-            this.lvChapters.Location = new System.Drawing.Point(407, 29);
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26,
+            listViewItem27});
+            this.lvChapters.Location = new System.Drawing.Point(407, 21);
             this.lvChapters.Name = "lvChapters";
-            this.lvChapters.Size = new System.Drawing.Size(62, 177);
+            this.lvChapters.Size = new System.Drawing.Size(62, 143);
             this.lvChapters.TabIndex = 15;
             this.lvChapters.UseCompatibleStateImageBehavior = false;
             this.lvChapters.View = System.Windows.Forms.View.SmallIcon;
@@ -888,7 +903,7 @@
             this.btnShowChaptObj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnShowChaptObj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowChaptObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowChaptObj.Location = new System.Drawing.Point(308, 84);
+            this.btnShowChaptObj.Location = new System.Drawing.Point(308, 73);
             this.btnShowChaptObj.Margin = new System.Windows.Forms.Padding(1);
             this.btnShowChaptObj.Name = "btnShowChaptObj";
             this.btnShowChaptObj.Size = new System.Drawing.Size(65, 46);
@@ -911,12 +926,11 @@
             this.grpSelectClass.TabStop = false;
             this.grpSelectClass.Text = "Select Class";
             this.grpSelectClass.Visible = false;
-            this.grpSelectClass.Enter += new System.EventHandler(this.grpSelectClass_Enter);
             // 
             // msMainMenu
             // 
             this.msMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.msMainMenu.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.msMainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.msMainMenu.GripMargin = new System.Windows.Forms.Padding(2);
             this.msMainMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -925,7 +939,7 @@
             this.tsmiLearningObjectives});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(1173, 28);
+            this.msMainMenu.Size = new System.Drawing.Size(1172, 24);
             this.msMainMenu.Stretch = false;
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
@@ -937,7 +951,7 @@
             this.tsmiNewClass});
             this.tsmiClass.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsmiClass.Name = "tsmiClass";
-            this.tsmiClass.Size = new System.Drawing.Size(54, 24);
+            this.tsmiClass.Size = new System.Drawing.Size(46, 20);
             this.tsmiClass.Text = "Class";
             this.tsmiClass.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiClass_DropDownItemClicked);
             this.tsmiClass.MouseEnter += new System.EventHandler(this.tsmiClass_MouseEnter);
@@ -945,14 +959,14 @@
             // tsmiLoadClass
             // 
             this.tsmiLoadClass.Name = "tsmiLoadClass";
-            this.tsmiLoadClass.Size = new System.Drawing.Size(203, 24);
+            this.tsmiLoadClass.Size = new System.Drawing.Size(173, 22);
             this.tsmiLoadClass.Text = "Load Existing Class";
             this.tsmiLoadClass.Click += new System.EventHandler(this.tsmiLoadClass_Click);
             // 
             // tsmiNewClass
             // 
             this.tsmiNewClass.Name = "tsmiNewClass";
-            this.tsmiNewClass.Size = new System.Drawing.Size(203, 24);
+            this.tsmiNewClass.Size = new System.Drawing.Size(173, 22);
             this.tsmiNewClass.Text = "Create New";
             this.tsmiNewClass.Click += new System.EventHandler(this.tsmiNewClass_Click);
             // 
@@ -963,7 +977,7 @@
             this.tsmiShowStudent});
             this.tsmiStudents.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsmiStudents.Name = "tsmiStudents";
-            this.tsmiStudents.Size = new System.Drawing.Size(72, 24);
+            this.tsmiStudents.Size = new System.Drawing.Size(60, 20);
             this.tsmiStudents.Text = "Student";
             this.tsmiStudents.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsmiStudents_DropDownItemClicked);
             this.tsmiStudents.MouseEnter += new System.EventHandler(this.tsmiStudents_MouseEnter);
@@ -971,7 +985,7 @@
             // tsmiAddStudent
             // 
             this.tsmiAddStudent.Name = "tsmiAddStudent";
-            this.tsmiAddStudent.Size = new System.Drawing.Size(193, 24);
+            this.tsmiAddStudent.Size = new System.Drawing.Size(164, 22);
             this.tsmiAddStudent.Text = "Add New";
             this.tsmiAddStudent.Click += new System.EventHandler(this.tsmiAddStudent_Click);
             // 
@@ -980,7 +994,7 @@
             this.tsmiShowStudent.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tscbIndividualDetails});
             this.tsmiShowStudent.Name = "tsmiShowStudent";
-            this.tsmiShowStudent.Size = new System.Drawing.Size(193, 24);
+            this.tsmiShowStudent.Size = new System.Drawing.Size(164, 22);
             this.tsmiShowStudent.Text = "Individual Details";
             this.tsmiShowStudent.Visible = false;
             // 
@@ -996,14 +1010,14 @@
             this.tsmiGroups});
             this.tsmiLearningObjectives.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsmiLearningObjectives.Name = "tsmiLearningObjectives";
-            this.tsmiLearningObjectives.Size = new System.Drawing.Size(145, 24);
+            this.tsmiLearningObjectives.Size = new System.Drawing.Size(118, 20);
             this.tsmiLearningObjectives.Text = "Learning Objective";
             this.tsmiLearningObjectives.MouseEnter += new System.EventHandler(this.tsmiLearningObjectives_MouseEnter);
             // 
             // tsmiAddObjective
             // 
             this.tsmiAddObjective.Name = "tsmiAddObjective";
-            this.tsmiAddObjective.Size = new System.Drawing.Size(200, 24);
+            this.tsmiAddObjective.Size = new System.Drawing.Size(172, 22);
             this.tsmiAddObjective.Text = "Create New";
             this.tsmiAddObjective.Click += new System.EventHandler(this.tsmiAddObjective_Click);
             // 
@@ -1012,7 +1026,7 @@
             this.tsmiGroups.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGroupByObj});
             this.tsmiGroups.Name = "tsmiGroups";
-            this.tsmiGroups.Size = new System.Drawing.Size(200, 24);
+            this.tsmiGroups.Size = new System.Drawing.Size(172, 22);
             this.tsmiGroups.Text = "Group Students By";
             this.tsmiGroups.MouseEnter += new System.EventHandler(this.tsmiGroups_MouseEnter);
             // 
@@ -1020,27 +1034,9 @@
             // 
             this.tsmiGroupByObj.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tsmiGroupByObj.Name = "tsmiGroupByObj";
-            this.tsmiGroupByObj.Size = new System.Drawing.Size(287, 22);
+            this.tsmiGroupByObj.Size = new System.Drawing.Size(285, 22);
             this.tsmiGroupByObj.Text = "Currently Selected Learning Objective(s)";
             this.tsmiGroupByObj.Click += new System.EventHandler(this.tsmiGroupByObj_Click);
-            // 
-            // cbxMac
-            // 
-            this.cbxMac.AutoSize = true;
-            this.cbxMac.Checked = true;
-            this.cbxMac.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxMac.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.cbxMac.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.cbxMac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
-            this.cbxMac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxMac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxMac.Location = new System.Drawing.Point(16, 686);
-            this.cbxMac.Name = "cbxMac";
-            this.cbxMac.Size = new System.Drawing.Size(102, 17);
-            this.cbxMac.TabIndex = 37;
-            this.cbxMac.Text = "Optimize for Mac";
-            this.cbxMac.UseVisualStyleBackColor = true;
-            this.cbxMac.CheckedChanged += new System.EventHandler(this.cbxMac_CheckedChanged);
             // 
             // LearningTrackerWindow
             // 
@@ -1050,7 +1046,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1175, 730);
+            this.ClientSize = new System.Drawing.Size(1175, 725);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMainMenu;
