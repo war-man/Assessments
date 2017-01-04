@@ -38,6 +38,12 @@
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("8");
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("9");
             System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("11");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("12");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("13");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("14");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("15");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("16");
             this.txtObjId = new System.Windows.Forms.TextBox();
             this.lblObjAddConfirm = new System.Windows.Forms.Label();
             this.txtObjDesc = new System.Windows.Forms.TextBox();
@@ -875,6 +881,12 @@
             listViewItem7.StateImageIndex = 0;
             listViewItem8.StateImageIndex = 0;
             listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
             this.lvChapters.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
@@ -884,7 +896,13 @@
             listViewItem6,
             listViewItem7,
             listViewItem8,
-            listViewItem9});
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.lvChapters.Location = new System.Drawing.Point(407, 21);
             this.lvChapters.Name = "lvChapters";
             this.lvChapters.Size = new System.Drawing.Size(62, 143);
