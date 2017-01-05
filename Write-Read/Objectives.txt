@@ -40,7 +40,7 @@
 6.5 (5)*use add. facts to find missing part in sub.*
 6.6 (4)*use add. fact to solve sub. problem*
 6.7 (6)*draw/write # sent. to solve problems*
-7.1 (1)*write numbers 11-19.*
+7.1 (1)*write numbers 11-19*
 7.2 (2, 3)*show numbers 11-19 as 1 or 2 more or fewer than another number*
 7.3 (4)*count groups of 10*
 7.4 (5, 6)*count on a number chart*
@@ -62,3 +62,39 @@
 10.4 (5, 6, 7)*add a multiple of 10 to a 2-digit # mentally*
 10.5 (4, 8)*add 1-digit #'s to 2-digit #'s with/w/o regrouping*
 10.6 (9)*solve problems by drawing pictures*
+11.1 (4)*sub. a multiple of 10 from another multiple of 10*
+11.2 (1)*use a 100 chart to subtract multiples of 10 from 2-digit #'s*
+11.3 (2, 5)*cross out picture to sub. multiple of 10 from another mult. of 10*
+11.4 (3)*use a mental math or ten frame to sub. multiple of 10 from another mult. of 10*
+11.5 (6)*solve sub. problems while drawing a picture*
+12.1 (1)*compare and order lengths*
+12.2 (4)*indirectly compare objects by length*
+12.3 (2, 3, 6)*meausre length*
+12.4 (2, 3, 6)*measure length*
+12.5 (2, 3, 6)*measure length*
+12.6 (5)*choose best tool for measuring length*
+13.1 (1)*identify hour/minute hands on clock*
+13.2 (2, 4)*tell/write time to hour using digital/analog clocks*
+13.3 (3)*show/tell time to the half hour*
+13.4 (5, 6)*read/use schedules to solve problems*
+14.1 (1)*use a real-obj. graph to answer questions*
+14.2 (2, 3)*use a picture graph to answer questions*
+14.3 (4, 5)*use a bar graph to answer questions*
+14.4 (2, 6)*record data using tally marks*
+14.5 (1)*collect data & organize in real-object graphs*
+14.6 (2, 6)*organize & analyze data using picture graph*
+14.7 (4, 6)*make/use graphs to solve problems*
+15.1 (1)*identify & name plane shapes*
+15.2 (8)*make organized lists to solve problems*
+15.3 (2)*sort & identify properties of plane shapes*
+15.4 (7)*combine plane shapes to make diff. pictures*
+15.5 (3)*combine shapes to make new shapes*
+15.6 (4)*identify & name geom. solids*
+15.7 (5)*count # of flat surfaces and vertices*
+15.8 (6)*ident. & sort geom. solids*
+15.9 (9)*combine solid fig. to make new ones*
+15.10 (10)*ident. defining & non-defining attributes*
+16.1 (1)*determine if shape is divided into equal or unequal parts*
+16.2 (2, 3)*describe equal parts of a whole*
+16.3 (4, 6)*identify halves and quarters*
+16.4 (5)*solve a problem by drawing a picture*
