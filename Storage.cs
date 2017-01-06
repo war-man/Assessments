@@ -18,6 +18,23 @@ namespace Assessments
         private List<int> activeObjectiveIndices = new List<int>();
         private int activeRosterLength;
 
+        //for fourth group addition
+        private List<string> currentChapters = new List<string>();
+        public List<string> CurrentChapters
+        {
+            get { return currentChapters; }
+            set { currentChapters = value; }
+        }
+
+        private List<string> curChapObjectives;
+        public List<string> CurChapObjectives
+        {
+            get { return curChapObjectives; }
+            set { curChapObjectives = value; }
+        }
+
+
+               
         public string CurrentClassID
         {
             get { return currentClassId; }

@@ -233,6 +233,12 @@ namespace Assessments
 
                     ++i;
                 }
+
+                //for fourth group tracking
+                List<string> chaptersList = chapters.ToList<string>();
+                sto.CurrentChapters = chaptersList;
+                DetermineCurChaptObjs();
+
                 //to store absolute index values of objectives that will be relatively displayed.
                 sto.DetermineActiveObjectiveIndicies(chapters);
 
@@ -842,6 +848,9 @@ namespace Assessments
             ClearGroupBoxes();
             ClearStuProgBoxes();
 
+            //will hold the string representation(s) of just the chapters of selected objectives
+            List<string> selectedChapters = new List<string>();
+
             //prohibits code from running when menu item option is selected but before class has been selected.
             if (scRosterDisplay.Visible == true)
             {
@@ -948,7 +957,6 @@ namespace Assessments
                                 if ( (part == true && partAll == true) 
 
                                    
-
                                     /*student has partial pass of current objective AND complete pass           of all previous ones*/
                                     ||(part == true && passAll == true)
                                 
@@ -986,7 +994,19 @@ namespace Assessments
                             //if they passedAll the selected objectives, add their name to the passing listview box.
                             if (passAll == true)
                             {
-                                lvCompleted.Items.Add(stud.ToStringFirstLast());
+                                //  DETERMINE IF ALL OBJECTIVES FOR THIS CHAPTER HAVE BEEN MET
+                                bool fourthGroup = AllObjectivesComplete(stud);
+                                
+                                if (fourthGroup)
+                                {
+                                    lv4thGroup.Items.Add(stud.ToStringFirstLast());
+                                }
+                                else
+                                {
+                                    lvCompleted.Items.Add(stud.ToStringFirstLast());
+
+                                }
+
                             }
 
                             //if they partially passed all.  This would also include if they completely passed all except one that was partially passed.  Any combination of partial and complete passes will put them in the partially passed box.
@@ -1025,6 +1045,8 @@ namespace Assessments
                     }
                     lblSortGroupList.Visible = true;
                     pnlGroups.Visible = true;
+                    pnl4thGroup.Visible = true;
+                
                 }
 
                 //if objective box is displayed but nothing is checked.
@@ -1035,7 +1057,7 @@ namespace Assessments
                 }
             }
 
-            //if user tries to generate groups but hasn't selected a class yet.  most likely would get to this point if user tried to use menuitems to generate groups before they selected a class.
+            //if user tries to generate groups but hasn't selected a class yet.  Most likely would get to this point if user tried to use menuitems to generate groups before they selected a class.
             else
             {
                 lblFeedbackMessage.Text = "Please first select a class so you can select which\nobjective(s) you would like to generate groups from.";
@@ -1045,6 +1067,127 @@ namespace Assessments
                 tsmiLoadClass_Click(sender, e);
             }
         }
+
+
+        /// <summary>
+        /// Parses a list of string values to return only the unique chapter prefix of string values (those preceded by a "." character)
+        /// </summary>
+        /// <param name="userSelected">list containing currently selected objective string data</param>
+        /// <returns>truncated chapter values of passed list without duplicates</returns>
+        //private List<string> DetermineChapterSelection(List<string> userSelected)
+        //{
+        //    //will hold only numeric values of chapter prefixes without duplicates
+        //    List<string> chapters = new List<string>();
+
+        //    //using the period character to delimit the passed in strings.  characters before the period will represent the chapter value
+        //    char[] delimiter = new char[] { '.' };
+
+        //    //only one objective was checked so just add that chapter string to the return list
+        //    if (userSelected.Count == 1)
+        //    {
+        //        string[] chapterOnly = userSelected[0].Split(delimiter);
+        //        chapters.Add(chapterOnly[0]);
+        //    }
+
+        //    else
+        //    {
+        //        foreach (string objString in userSelected)
+        //        {
+        //            string[] chapterOnly = objString.Split(delimiter);
+        //            if (!chapters.Contains(chapterOnly[0]))
+        //            {
+        //                chapters.Add(chapterOnly[0]);
+        //            }
+        //        }
+        //    }
+
+        //    return chapters;
+        //}
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="possibleAllStar"></param>
+        /// <returns></returns>
+        private bool AllObjectivesComplete(Student possibleAllStar)
+        {
+            
+            if (!(sto.CurChapObjectives.Count > 0))
+            {
+                return false;
+            }
+
+            bool ARE_THEY = true;
+
+            foreach (string s in sto.CurChapObjectives)
+            {
+                if (ARE_THEY == true)
+                {
+                    foreach (Objective o in possibleAllStar.Completed)
+                    {
+                        string temp = o.ToString();
+
+                        if (temp == s)
+                        {
+                            ARE_THEY = true;
+                            break;
+                        }
+                        else
+                        {
+                            ARE_THEY = false;
+                        }
+
+                    }
+                }
+
+                //if (ARE_THEY == false)
+                //{
+                //    break;
+                //}
+            }
+
+
+            return ARE_THEY;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DetermineCurChaptObjs()
+        {
+            if (sto.CurChapObjectives != null)
+            {
+                sto.CurChapObjectives.Clear();
+            }
+
+            if (sto.CurrentChapters.Count == 1)
+            {
+                //using the period character to delimit the passed in strings.  characters before the period will represent the chapter value
+                char[] delimiter = new char[] { '.' };
+
+                string chapterOn = sto.CurrentChapters[0];
+                lbl4thGroup.Text = "All-Stars for Chapter " + chapterOn;
+
+                List<string> objectiveList = new List<string>();
+                foreach (string o in sto.TempObjectivesList)
+                {
+                    string[] temp = o.Split(delimiter);
+                    string chapterOfListItem = temp[0];
+
+                    if (chapterOfListItem == chapterOn)
+                    {
+                        objectiveList.Add(o);
+                    }
+
+                }
+
+                sto.CurChapObjectives = objectiveList;
+            }
+        }
+
+
 
         /// <summary>
         /// Will generate list of all existing items in the group boxes with detailed headings and send to the clipboard
@@ -1253,6 +1396,7 @@ namespace Assessments
             lvCompleted.Items.Clear();
             lvPartial.Items.Clear();
             lvNot.Items.Clear();
+            lv4thGroup.Clear();
             lblSortGroupList.Text = "";//resets the text that explained which objectives were used to sort the groups
         }
 
