@@ -55,14 +55,18 @@ namespace Assessments
         {
             //determine if Optimize for Mac box is checked
             OPTIMIZE_FOR_MAC_OPTION();
+
             //load current class id list from file to storage object
             sto.GetClassIdsFromFile();
+
             //load current objective list from file to storage object
             sto.GetObjectivesFromFile();
+
             /*create student objects based on current data in .txt file upon load
             any new students created will be appended to end of tempstudentobjectlist in 
             storage object*/
             sto.CreateStudentObjects();
+
             //initialized form to display menu where user can select to load existing class (if any)
             DisplayExistingClasses();
         }
@@ -75,7 +79,8 @@ namespace Assessments
         /// </summary>
         private void OPTIMIZE_FOR_MAC_OPTION()
         {
-            bool currentState = cbxMac.Checked; //current state of checkbox
+            //current state of checkbox
+            bool currentState = cbxMac.Checked; 
             if (currentState == true)
             {
                 Mac = true;
@@ -123,16 +128,21 @@ namespace Assessments
         /// </summary>
         private void DisplayExistingClasses()
         {
-            lbClasses.Items.Clear();//to prevent classes from being duplicated in listbox if method is called again.
+            //to prevent classes from being duplicated in listbox if method is called again.
+            lbClasses.Items.Clear();
+
             foreach (string s in sto.TempClassIDList) //classes are taken from tempClassIDList of storage object at this moment.
+
             {
                 lbClasses.Items.Add(s);
             }
+
             //if menu to select class is not already being shown, show it.
             if (grpSelectClass.Visible == false)
             {
                 grpSelectClass.Visible = true;
             }
+
             grpAddClass.Visible = false;//option to add new class will only be shown if user selects option from menu.
         }
 
@@ -149,14 +159,27 @@ namespace Assessments
             {
                 ClearAllGroupBoxes();
                 string userSelect = lbClasses.SelectedItem.ToString();
-                sto.CurrentClassID = userSelect;//establishes current selected item in class list box as currentclassID for storage object, which will drive everything with displaying students and updating data now!
+
+                //establishes current selected item in class list box as currentclassID for storage object, which will drive everything with displaying students and updating data now!
+                sto.CurrentClassID = userSelect;
+
                 //NOT NEEDED//storageObject.GetNameRoster(storageObject.CurrentClassID);//will generate list of student names who are only in selected class and store them in tempstudentlist of storage object.
-                DisplayClassRosterPanel();//displays roster of students in currently selected class
-                scRosterDisplay.Visible = true;//set this line ahead of DisplayLearningObjectives due to bug in displaying in complete column.
-                DisplayLearningObjectivesPanel();//displays learning objectives loaded into storage object from .txt data file
-                pnlGenerateGroups.Visible = true;//shows menu option to generate groups below learning objectives
+
+                //displays roster of students in currently selected class
+                DisplayClassRosterPanel();
+
+                //set this line ahead of DisplayLearningObjectives due to bug in displaying in complete column.
+                scRosterDisplay.Visible = true;
+
+                //displays learning objectives loaded into storage object from .txt data file
+                DisplayLearningObjectivesPanel();
+
+                //shows menu option to generate groups below learning objectives
+                pnlGenerateGroups.Visible = true;
             }
-            else//reaches this if no class in box is selected.  Simply displays error message to tell user they need to select a class if they want this button click to do anything.
+
+            //reaches this if no class in box is selected.  Simply displays error message to tell user they need to select a class if they want this button click to do anything.
+            else
             {
                 lblFeedbackMessage.Text = "Please select an existing class to display.\nIf you would like to create a new class, please select the \"Create New\" option in the Class menu item.";
                 lblFeedbackMessage.Visible = true;
@@ -169,7 +192,9 @@ namespace Assessments
         /// </summary>
         private void DisplayLearningObjectivesPanel()
         {
-            lvObjectives.Clear();//to avoid duplicates if method is called again
+            //to avoid duplicates if method is called again
+            lvObjectives.Clear();
+
             lblFeedbackMessage.Visible = false;
             foreach (string o in sto.TempObjAndDescList)
             {
@@ -188,24 +213,41 @@ namespace Assessments
         //"Show Selected" button click
         private void btnShowChaptObj_Click(object sender, EventArgs e)
         {
-            ListView.CheckedListViewItemCollection checkedStuff = lvChapters.CheckedItems;//collection of all the items that are checked in chapter box
-            int count = checkedStuff.Count;//how many things are checked
-            if (count > 0)//at least one thing is checked
+            //collection of all the items that are checked in chapter box
+            ListView.CheckedListViewItemCollection checkedStuff = lvChapters.CheckedItems;
+
+            //how many things are checked
+            int count = checkedStuff.Count;
+
+            //at least one thing is checked
+            if (count > 0)
             {
-                string[] chapters = new string[count];//will hold .text fields for each box that is checked
+                //will hold .text fields for each box that is checked
+                string[] chapters = new string[count];
+
                 int i = 0;
                 foreach (ListViewItem item in checkedStuff)
                 {
-                    chapters[i] = item.Text.Trim();//places checked box's chapter number text string into array
+                    //places checked box's chapter number text string into array
+                    chapters[i] = item.Text.Trim();
+
                     ++i;
                 }
-                sto.DetermineActiveObjectiveIndicies(chapters);//to store absolute index values of objectives that will be relatively displayed.
-                DisplaySpecificObjectives();//re-populates objective box with specific chapters' objectives.
+                //to store absolute index values of objectives that will be relatively displayed.
+                sto.DetermineActiveObjectiveIndicies(chapters);
+
+                //re-populates objective box with specific chapters' objectives.
+                DisplaySpecificObjectives();
             }
-            else//nothing is checked in the listViewChapters box.
+            //nothing is checked in the listViewChapters box.
+            else
             {
-                btnShowAllObj_Click(sender, e);//will show all objectives because no specific chapters are selected.
-                lblFeedbackMessage.Text = "All objectives have been displayed.";//notifies user that all objectives have been displayed because they clicked to display specific ones but they didn't check any chapters.
+                //will show all objectives because no specific chapters are selected.
+                btnShowAllObj_Click(sender, e);
+
+                //notifies user that all objectives have been displayed because they clicked to display specific ones but they didn't check any chapters.
+                lblFeedbackMessage.Text = "All objectives have been displayed.";
+
                 lblFeedbackMessage.Visible = true;
             }
         }
@@ -799,57 +841,96 @@ namespace Assessments
             lblFeedbackMessage.Visible = false;
             ClearGroupBoxes();
             ClearStuProgBoxes();
-            if (scRosterDisplay.Visible == true)//prohibits code from running when menu item option is selected but before class has been selected.
+
+            //prohibits code from running when menu item option is selected but before class has been selected.
+            if (scRosterDisplay.Visible == true)
             {
-                int objecCount = lvObjectives.CheckedItems.Count;//how many objectives are checked
-                if (objecCount > 0)//ensures that at least one objective to group students by is actually checked.
+                //how many objectives are checked
+                int objecCount = lvObjectives.CheckedItems.Count;
+
+                //ensures that at least one objective to group students by is actually checked.
+                if (objecCount > 0)
                 {
-                    int[] oIndices = new int[objecCount];//will hold the absolute index values of all currently checked objectives
-                    List<string> currentSelectedObjectives = new List<string>();//will hold the string id's of currently checked objectives
-                    ListView.CheckedListViewItemCollection objList = lvObjectives.CheckedItems;//items that are checked
-                    int o = 0;//to start with first index in oIndices
+                    //will hold the absolute index values of all currently checked objectives
+                    int[] oIndices = new int[objecCount];
+
+                    //will hold the string id's of currently checked objectives
+                    List<string> currentSelectedObjectives = new List<string>();
+
+                    //items that are checked
+                    ListView.CheckedListViewItemCollection objList = lvObjectives.CheckedItems;
+
+                    //to start with first index in oIndices
+                    int o = 0;
                     foreach (ListViewItem item in objList)
                     {
-                        int active = item.Index;//position index value of checked item in currently displayed objective box.
-                        //this is not necessarily the same number as position in data file because user might have had objective
-                        //list display customized by chapter
-                        int overall = sto.ActiveObjectiveIndices[active];//this value should be the absolute index position of
-                        //checked item as the ActiveObjectiveIndicies array holds this pointer.
-                        oIndices[o] = overall;//stores the absolute index value of checked item into the oIndices array holder
-                        currentSelectedObjectives.Add(sto.TempObjectivesList[overall]);//adds the string value of current objective to the temporary list that holds the id values of all currently selected objectives.
-                        ++o;//increments counter in order to go to the next spot in the array if there is another objective checked.
+                        //position index value of checked item in currently displayed objective box.
+                        //this is not necessarily the same number as position in data file because user might have had objective list display customized by chapter
+                        int active = item.Index;
+
+                        //this value should be the absolute index position of checked item as the ActiveObjectiveIndicies array holds this pointer.
+                        int overall = sto.ActiveObjectiveIndices[active];
+
+                        //stores the absolute index value of checked item into the oIndices array holder
+                        oIndices[o] = overall;
+
+                        //adds the string value of current objective to the temporary list that holds the id values of all currently selected objectives.
+                        currentSelectedObjectives.Add(sto.TempObjectivesList[overall]);
+
+                        //increments counter in order to go to the next spot in the array if there is another objective checked.
+                        ++o;
                     }
                     string currentClass = sto.CurrentClassID;
-                    foreach (Student stud in sto.TempStudentObjectList)/*iterates through all StudentObjects
-                        this is probably not the most efficient way to do this but I don't know another solution yet.*/
+
+                    /*iterates through all StudentObjects this is probably not the most efficient way to do this but I don't know another solution yet.*/
+                    foreach (Student stud in sto.TempStudentObjectList)
                     {
-                        if (stud.SectionID == sto.CurrentClassID)//checks student object to determine if this particular student belongs to the class the user is working with.
+                        //checks student object to determine if this particular student belongs to the class the user is working with.
+                        if (stud.SectionID == sto.CurrentClassID)
                         {
-                            bool passAll = true;//when true, indicates the student has passed every objective that the user wants to group by.
-                            bool partAll = true;//when true, indicates the student has passed OR partially passed every objective the user wants to group by.
-                            for (int i = 0; i < o; ++i)// 'o' should be the number of objectives the user selected.
+                            //when true, indicates the student has passed every objective that the user wants to group by.
+                            bool passAll = true;
+
+                            //when true, indicates the student has passed OR partially passed every objective the user wants to group by.
+                            bool partAll = true;
+
+                            // 'o' should be the number of objectives the user selected.
+                            for (int i = 0; i < o; ++i)
                             {
-                                bool pass = false;//when true, indicates the student has passed THIS specific objective (iteration)
-                                bool part = false;//when true, indicates the student partially passed THIS specific objective
-                                string current = sto.TempObjectivesList[oIndices[i]];//represents the id value of the objective that is checked
-                                foreach (Objective compObj in stud.Completed)//iterates through student object's completed objective list
+                                //when true, indicates the student has passed THIS specific objectiv       (iteration)
+                                bool pass = false;
+
+                                //when true, indicates the student partially passed THIS specific          objective
+                                bool part = false;
+
+                                //represents the id value of the objective that is checked
+                                string current = sto.TempObjectivesList[oIndices[i]];
+
+                                //iterates through student object's completed objective list
+                                foreach (Objective compObj in stud.Completed)
                                 {
-                                    if (pass == false)//if pass is true this means that the student has completed the specified objective and there is no reason to keep searching.
-                                    {//would putting a BREAK below work better?
+                                    //if pass is true this means that the student has completed the         specified objective and there is no reason to keep searching.
+                                    if (pass == false)
+
+                                    {
+                                        //would putting a BREAK below work better?
                                         if (current == compObj.ToString())
                                         {
+                                            //objective found in student's completed list! would a                      BREAK work more efficiently?
                                             pass = true;
-                                            //objective found in student's completed list! would a BREAK work more efficiently?
+                                            
                                         }
                                     }
                                 }
-                                foreach (Objective partObj in stud.Partial)//iterates through student object's partially completed objective list
+
+                                //iterates through student object's partially completed objective list
+                                foreach (Objective partObj in stud.Partial)
                                 {
-                                    if (pass == false)/*if student has completely passed this objective we're not going to 
-                                        see if they also partially passed it because the completion 'supercedes the partial*/
+                                    /*if student has completely passed this objective we're not going           to see if they also partially passed it because the completion              'supercedes the partial*/
+                                    if (pass == false)
                                     {
-                                        if (part == false)//if part value is true it means the current objective was found in 
-                                            //student's partial list so we should move on.
+                                        //if part value is true it means the current objective was                  found in student's partial list so we should move on.
+                                        if (part == false)
                                         {
                                             if (current == partObj.ToString())
                                             {
@@ -859,36 +940,58 @@ namespace Assessments
                                         }
                                     }
                                 }
-                                //the sequence below should happen for each student after EACH iteration through the selected objectives that the user wants to compare to.
-                                if ( (part == true && partAll == true) /* student has partial pass of current objective AND partial pass of all the previous ones compared to (if any)*/ 
-                                    || (part == true && passAll == true) /*student has partial pass of current objective AND complete pass of all previous ones*/ 
-                                    || (pass == true && partAll == true) ) /*student has partial pass of previous objective(s)  and complete pass of current objective*/
+
+                                //*************------------*************
+                                //the sequence below should happen for each student after EACH      iteration through the selected objectives that the user wants to compare to.
+
+                                /* student has partial pass of current objective AND partial pass of        all the previous ones compared to (if any)*/
+                                if ( (part == true && partAll == true) 
+
+                                   
+
+                                    /*student has partial pass of current objective AND complete pass           of all previous ones*/
+                                    ||(part == true && passAll == true)
+                                
+                                    /*student has partial pass of previous objective(s)  and complete           pass of current objective*/
+                                    || (pass == true && partAll == true) ) 
                                 {
-                                    partAll = true; /*set Partial pass of all to true 
-                                    (Student has at LEAST PARTIALLY passed all objectives, 
-                                    even if some of those include complete passes)*/
+
+                                    /*set Partial pass of all to true (Student has at LEAST PARTIALLY           passed all objectives, even if some of those include complete               passes)*/
+                                    partAll = true; 
+                                }
+
+                                else
+                                {
+                                    //even if student has passed all the selected objectives, PARTall           will be false
+                                    partAll = false; 
+                                }
+
+                                //if the student has passedAll and passed the current one
+                                if (passAll == true && pass == true) 
+                                {
+                                    //set passAll to (student has passed All so far)
+                                    passAll = true; 
                                 }
                                 else
                                 {
-                                    partAll = false; //even if student has passed all the selected objectives, PARTall will be false
+                                    //once a student hasn't passed one, passAll needs to be false
+                                    passAll = false; 
                                 }
-                                if (passAll == true && pass == true) //if the student has passedAll and passed the current one
-                                {
-                                    passAll = true; //set passAll to (student has passed All so far)
-                                }
-                                else
-                                {
-                                    passAll = false; //once a student hasn't passed one, passAll needs to be false
-                                }
-                                //end sequence
+                                //*************----END SEQUENCE--------*************
                             }
 
+                            //*************------------*************
                             //this sequence will occur ONCE for each student after all the selected compare to objectives have been iterated through.
-                            if (passAll == true)//if they passedAll the selected objectives, add their name to the passing listview box.
+
+                            //if they passedAll the selected objectives, add their name to the passing listview box.
+                            if (passAll == true)
                             {
                                 lvCompleted.Items.Add(stud.ToStringFirstLast());
                             }
-                            else if (partAll == true)//if they partially passed all.  This would also include if they completely passed all except one that was partially passed.  Any combination of partial and complete passes will put them in the partially passed box.
+
+                            //if they partially passed all.  This would also include if they completely passed all except one that was partially passed.  Any combination of partial and complete passes will put them in the partially passed box.
+                            else if (partAll == true)
+
                             {
                                 lvPartial.Items.Add(stud.ToStringFirstLast());
                             }
@@ -900,7 +1003,10 @@ namespace Assessments
                     }
                     lblSortGroupList.Text = "The objective()s used\nas criteria for this\nsort was/were:";
                     int objCount = currentSelectedObjectives.Count();
-                    if (objCount > 3)//just display three objectives and tell how many more there were (instead of having a huge list).
+
+                    //just display three objectives and tell how many more there were (instead of having a huge list).
+                    if (objCount > 3)
+
                     {
                         //lblSortGroupList.Text += "\n";//adds line break to message
                         for (int i = 0; i < 3; ++i)
@@ -921,17 +1027,22 @@ namespace Assessments
                     pnlGroups.Visible = true;
                 }
 
-                else//if objective box is displayed but nothing is checked.
+                //if objective box is displayed but nothing is checked.
+                else
                 {
                     lblFeedbackMessage.Text = "You must select at least one objective to generate achievement groups for.";
                     lblFeedbackMessage.Visible = true;
                 }
             }
-            else//if user tries to generate groups but hasn't selected a class yet.  most likely would get to this point if user tried to use menuitems to generate groups before they selected a class.
+
+            //if user tries to generate groups but hasn't selected a class yet.  most likely would get to this point if user tried to use menuitems to generate groups before they selected a class.
+            else
             {
                 lblFeedbackMessage.Text = "Please first select a class so you can select which\nobjective(s) you would like to generate groups from.";
                 lblFeedbackMessage.Visible = true;
-                tsmiLoadClass_Click(sender, e);//will display the menu to select a class from.
+
+                //will display the menu to select a class from.
+                tsmiLoadClass_Click(sender, e);
             }
         }
 
