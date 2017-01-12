@@ -585,7 +585,7 @@
             this.lv4thGroup.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lv4thGroup.Location = new System.Drawing.Point(6, 38);
             this.lv4thGroup.Name = "lv4thGroup";
-            this.lv4thGroup.Size = new System.Drawing.Size(217, 60);
+            this.lv4thGroup.Size = new System.Drawing.Size(194, 60);
             this.lv4thGroup.TabIndex = 39;
             this.lv4thGroup.UseCompatibleStateImageBehavior = false;
             this.lv4thGroup.View = System.Windows.Forms.View.List;
@@ -595,7 +595,7 @@
             this.lbl4thGroup.AutoSize = true;
             this.lbl4thGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl4thGroup.ForeColor = System.Drawing.Color.Teal;
-            this.lbl4thGroup.Location = new System.Drawing.Point(68, 18);
+            this.lbl4thGroup.Location = new System.Drawing.Point(3, 18);
             this.lbl4thGroup.Name = "lbl4thGroup";
             this.lbl4thGroup.Size = new System.Drawing.Size(98, 17);
             this.lbl4thGroup.TabIndex = 38;

@@ -204,13 +204,23 @@ namespace Assessments
         {
             ActiveObjectiveIndices.Clear();
             int i = 0;
+            char[] delimiter = new char[] { '.' };
+
             foreach (string id in TempObjectivesList)
             {
                 bool keep = false;
+                string[] temp1a = id.Split(delimiter);
+                string temp1s = temp1a[0];
+
                 foreach (string chap in chapters)
                 {
-                    string temp = chap + ".";
-                    if (id.Contains(temp))
+                    //string temp = chap + ".";
+                    string[] temp2a = chap.Split(delimiter);
+                    string temp2s = temp2a[0];
+
+                    //if (id.Contains(temp))
+
+                    if (temp1s == temp2s)
                     {
                         keep = true;
                         break;
@@ -223,6 +233,10 @@ namespace Assessments
                 ++i;
             }
         }
+
+        
+
+        
 
         /// <summary>
         /// Retrieves List of strings containing current class ids stored in classid.txt file.
