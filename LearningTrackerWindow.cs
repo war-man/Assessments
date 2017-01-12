@@ -1266,7 +1266,7 @@ namespace Assessments
             CopyListViewBox(lv4thGroup, out temp);
 
             //currentchapter is really just one chapter
-            if (sto.CurrentChapters != null)
+            if (sto.CurrentChapters != null && sto.CurrentChapters.Count == 1)
             {
                 string ch = sto.CurrentChapters[0];
                 fullSb.AppendLine("**-- All-Stars for Chapter " + ch + " --**");
